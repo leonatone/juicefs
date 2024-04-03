@@ -108,6 +108,11 @@ func newKVMeta(driver, addr string, conf *Config) (Meta, error) {
 	return m, nil
 }
 
+//for exporting
+func NewKVMeta(driver, addr string, conf *Config) (Meta, error) {
+	return newKVMeta(driver, addr, conf)
+}
+
 func (m *kvMeta) Shutdown() error {
 	return m.client.close()
 }
