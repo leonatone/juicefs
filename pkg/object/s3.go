@@ -2,7 +2,7 @@
 // +build !nos3
 
 /*
- * JuiceFS, Copyright 2018 Juicedata, Inc.
+ * JuiceFS, Copyright 2018 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/utils"
 )
 
 const awsDefaultRegion = "us-east-1"

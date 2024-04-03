@@ -1,9 +1,9 @@
-<p align="center"><a href="https://github.com/juicedata/juicefs"><img alt="JuiceFS Logo" src="docs/en/images/juicefs-logo-new.svg" width="50%" /></a></p>
+<p align="center"><a href="https://github.com/leonatone/juicefs"><img alt="JuiceFS Logo" src="docs/en/images/juicefs-logo-new.svg" width="50%" /></a></p>
 <p align="center">
-    <a href="https://github.com/juicedata/juicefs/releases/latest"><img alt="Latest Stable Release" src="https://img.shields.io/github/v/release/juicedata/juicefs" /></a>
-    <a href="https://github.com/juicedata/juicefs/actions/workflows/unittests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/juicedata/juicefs/unittests.yml?branch=main&label=Unit%20Testing" /></a>
-    <a href="https://github.com/juicedata/juicefs/actions/workflows/integrationtests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/juicedata/juicefs/integrationtests.yml?branch=main&label=Integration%20Testing" /></a>
-    <a href="https://goreportcard.com/report/github.com/juicedata/juicefs"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/juicedata/juicefs" /></a>
+    <a href="https://github.com/leonatone/juicefs/releases/latest"><img alt="Latest Stable Release" src="https://img.shields.io/github/v/release/leonatone/juicefs" /></a>
+    <a href="https://github.com/leonatone/juicefs/actions/workflows/unittests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/leonatone/juicefs/unittests.yml?branch=main&label=Unit%20Testing" /></a>
+    <a href="https://github.com/leonatone/juicefs/actions/workflows/integrationtests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/leonatone/juicefs/integrationtests.yml?branch=main&label=Integration%20Testing" /></a>
+    <a href="https://goreportcard.com/report/github.com/leonatone/juicefs"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/leonatone/juicefs" /></a>
     <a href="https://juicefs.com/docs/community/introduction"><img alt="English doc" src="https://img.shields.io/badge/docs-Doc%20Center-brightgreen" /></a>
     <a href="https://go.juicefs.com/slack"><img alt="Join Slack" src="https://badgen.net/badge/Slack/Join%20JuiceFS/0abd59?icon=slack" /></a>
 </p>
@@ -176,7 +176,7 @@ The storage format is stable, and will be supported by all future releases.
 
 ## Reporting Issues
 
-We use [GitHub Issues](https://github.com/juicedata/juicefs/issues) to track community reported issues. You can also [contact](#community) the community for any questions.
+We use [GitHub Issues](https://github.com/leonatone/juicefs/issues) to track community reported issues. You can also [contact](#community) the community for any questions.
 
 ## Contributing
 
@@ -184,7 +184,7 @@ Thank you for your contribution! Please refer to the [JuiceFS Contributing Guide
 
 ## Community
 
-Welcome to join the [Discussions](https://github.com/juicedata/juicefs/discussions) and the [Slack channel](https://go.juicefs.com/slack) to connect with JuiceFS team members and other users.
+Welcome to join the [Discussions](https://github.com/leonatone/juicefs/discussions) and the [Slack channel](https://go.juicefs.com/slack) to connect with JuiceFS team members and other users.
 
 ## Usage Tracking
 
@@ -212,7 +212,7 @@ JuiceFS supports many Object Storage services. Please check out [this list](http
 
 ### Can I use Redis Cluster as metadata engine?
 
-Yes. Since [v1.0.0 Beta3](https://github.com/juicedata/juicefs/releases/tag/v1.0.0-beta3) JuiceFS supports the use of [Redis Cluster](https://redis.io/docs/manual/scaling) as the metadata engine, but it should be noted that Redis Cluster requires that the keys of all operations in a transaction must be in the same hash slot, so a JuiceFS file system can only use one hash slot.
+Yes. Since [v1.0.0 Beta3](https://github.com/leonatone/juicefs/releases/tag/v1.0.0-beta3) JuiceFS supports the use of [Redis Cluster](https://redis.io/docs/manual/scaling) as the metadata engine, but it should be noted that Redis Cluster requires that the keys of all operations in a transaction must be in the same hash slot, so a JuiceFS file system can only use one hash slot.
 
 See ["Redis Best Practices"](https://juicefs.com/docs/community/redis_best_practices) for more information.
 
@@ -224,4 +224,4 @@ For more FAQs, please see the [full list](https://juicefs.com/docs/community/faq
 
 ## Stargazers over time
 
-[![Star History Chart](https://api.star-history.com/svg?repos=juicedata/juicefs&type=Date)](https://star-history.com/#juicedata/juicefs&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=leonatone/juicefs&type=Date)](https://star-history.com/#leonatone/juicefs&Date)

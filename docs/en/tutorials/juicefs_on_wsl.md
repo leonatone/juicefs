@@ -59,13 +59,13 @@ Install the JuiceFS client on the Linux subsystem by executing the following com
 1. Get the latest version number
 
    ```shell
-   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
    ```
 
 2. Download the client to the current directory
 
    ```shell
-   wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+   wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
    ```
 
 3. Unzip the installation package

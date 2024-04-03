@@ -2,7 +2,7 @@
 // +build !noobs
 
 /*
- * JuiceFS, Copyright 2019 Juicedata, Inc.
+ * JuiceFS, Copyright 2019 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ import (
 	"github.com/pkg/errors"
 
 	"github.com/huaweicloud/huaweicloud-sdk-go-obs/obs"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"golang.org/x/net/http/httpproxy"
 )
 

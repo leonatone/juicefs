@@ -31,7 +31,7 @@ If it is [deployed through Kubernetes](../deployment/s3_gateway.md#deploy-in-kub
 
 ### Upgrade via kubectl
 
-Download and modify the `juicedata/juicefs-csi-driver` image tag in S3 Gateway [deploy YAML](https://github.com/juicedata/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) to the version you want to upgrade (see [here](https://github.com/juicedata/juicefs-csi-driver/releases) for a detailed description of all versions), and then run the following command:
+Download and modify the `leonatone/juicefs-csi-driver` image tag in S3 Gateway [deploy YAML](https://github.com/leonatone/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) to the version you want to upgrade (see [here](https://github.com/leonatone/juicefs-csi-driver/releases) for a detailed description of all versions), and then run the following command:
 
 ```shell
 kubectl apply -f ./juicefs-s3-gateway.yaml

@@ -6,7 +6,7 @@ slug: /juicefs_on_k3s
 
 [K3s](https://k3s.io) is a functionally optimized lightweight Kubernetes distribution that is fully compatible with Kubernetes.In other words, almost all operations performed on Kubernetes can also be executed on K3s. K3s packages the entire container orchestration system into a binary program with a size of less than 100MB, significantly reducing the environment dependencies and installation steps required to deploy Kubernetes production clusters. Compared to Kubernetes, K3s has lower performance requirements for the operating system.
 
-In this article, we will build a K3s cluster with two nodes, install and configure [JuiceFS CSI Driver](https://github.com/juicedata/juicefs-csi-driver) for the cluster, and lastly create an NGINX Pod for verification.
+In this article, we will build a K3s cluster with two nodes, install and configure [JuiceFS CSI Driver](https://github.com/leonatone/juicefs-csi-driver) for the cluster, and lastly create an NGINX Pod for verification.
 
 ## Deploy a K3s cluster
 
@@ -69,7 +69,7 @@ It is consistent with the method of [Use JuiceFS on Kubernetes](../deployment/ho
 Here we use kubectl as an example. Execute the following command to install the CSI Driver:
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/leonatone/juicefs-csi-driver/master/deploy/k8s.yaml
 ```
 
 ### Create Storage Class

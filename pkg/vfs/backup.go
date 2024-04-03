@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2021 Juicedata, Inc.
+ * JuiceFS, Copyright 2021 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/object"
-	osync "github.com/juicedata/juicefs/pkg/sync"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/meta"
+	"github.com/leonatone/juicefs/pkg/object"
+	osync "github.com/leonatone/juicefs/pkg/sync"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

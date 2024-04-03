@@ -116,7 +116,7 @@ prepare_db(){
         install_minio
         install_gluster
         install_webdav
-        docker run -d --name sftp -p 2222:22  juicedata/ci-sftp
+        docker run -d --name sftp -p 2222:22  leonatone/ci-sftp
         install_etcd
         .github/scripts/setup-hdfs.sh
         ;;

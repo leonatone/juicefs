@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/meta"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/urfave/cli/v2"
 )
 

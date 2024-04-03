@@ -85,7 +85,7 @@ All the following tests are run for each metadata engine.
 
 ### Golang Benchmark
 
-Simple benchmarks within the source code: [`pkg/meta/benchmarks_test.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/benchmarks_test.go)
+Simple benchmarks within the source code: [`pkg/meta/benchmarks_test.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/benchmarks_test.go)
 
 ### JuiceFS Bench
 

@@ -32,8 +32,8 @@ Low level concepts (learn more at [Data Processing Workflow](../introduction/io_
 
 Assuming you're already familiar with Go, as well as [JuiceFS architecture](https://juicefs.com/docs/community/architecture), this is the overall code structure:
 
-* [`cmd`](https://github.com/juicedata/juicefs/tree/main/cmd) is the top-level entrance, all JuiceFS functionalities is rooted here, e.g. the `juicefs format` command resides in `cmd/format.go`；
-* [`pkg`](https://github.com/juicedata/juicefs/tree/main/pkg) is actual implementation:
+* [`cmd`](https://github.com/leonatone/juicefs/tree/main/cmd) is the top-level entrance, all JuiceFS functionalities is rooted here, e.g. the `juicefs format` command resides in `cmd/format.go`；
+* [`pkg`](https://github.com/leonatone/juicefs/tree/main/pkg) is actual implementation:
   * `pkg/fuse/fuse.go` provides abstract FUSE API;
   * `pkg/vfs` contains actual FUSE implementation, Metadata requests are handled in `pkg/meta`, read requests are handled in `pkg/vfs/reader.go` and write requests are handled by `pkg/vfs/writer.go`;
   * `pkg/meta` directory is the implementation of all metadata engines, where:
@@ -42,7 +42,7 @@ Assuming you're already familiar with Go, as well as [JuiceFS architecture](http
     * `pkg/meta/sql.go` is the interface definition and general interface implementation of relational database, and the implementation of specific databases is in a separate file (for example, the implementation of MySQL is in `pkg/meta/sql_mysql.go`)
     * `pkg/meta/tkv.go` is the interface definition and general interface implementation of the KV database, and the implementation of a specific database is in a separate file (for example, the implementation of TiKV is in `pkg/meta/tkv_tikv.go`)
   * `pkg/object` contains all object storage integration code;
-* [`sdk/java`](https://github.com/juicedata/juicefs/tree/main/sdk/java) is the Hadoop Java SDK, it uses `sdk/java/libjfs` through JNI.
+* [`sdk/java`](https://github.com/leonatone/juicefs/tree/main/sdk/java) is the Hadoop Java SDK, it uses `sdk/java/libjfs` through JNI.
 
 ## FUSE interface implementation {#fuse-interface-implementation}
 

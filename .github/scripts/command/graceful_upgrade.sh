@@ -11,7 +11,7 @@ dpkg -s fio >/dev/null 2>&1 || .github/scripts/apt_install.sh fio
 dpkg -s attr >/dev/null 2>&1 || .github/scripts/apt_install.sh attr
 
 if [[ ! -x "./juicefs-1.1" ]]; then 
-    wget -q https://github.com/juicedata/juicefs/releases/download/v1.1.0/juicefs-1.1.0-linux-amd64.tar.gz
+    wget -q https://github.com/leonatone/juicefs/releases/download/v1.1.0/juicefs-1.1.0-linux-amd64.tar.gz
     rm /tmp/juicefs -rf && mkdir -p /tmp/juicefs
     tar -xzvf juicefs-1.1.0-linux-amd64.tar.gz -C /tmp/juicefs
     mv /tmp/juicefs/juicefs juicefs-1.1 && chmod +x juicefs-1.1 
@@ -130,14 +130,14 @@ test_update_fuse_option(){
     prepare_test
     ./juicefs format $META_URL myjfs
     ./juicefs mount -d $META_URL /tmp/jfs --enable-xattr
-    setfattr -n user.test -v "juicedata" /tmp/jfs
-    getfattr -n user.test /tmp/jfs | grep juicedata
+    setfattr -n user.test -v "leonatone" /tmp/jfs
+    getfattr -n user.test /tmp/jfs | grep leonatone
     sleep 1s
     ./juicefs mount -d $META_URL /tmp/jfs
     getfattr -n user.test /tmp/jfs && exit 1 || true
     sleep 1s
     ./juicefs mount -d $META_URL /tmp/jfs --enable-xattr
-    getfattr -n user.test /tmp/jfs | grep juicedata
+    getfattr -n user.test /tmp/jfs | grep leonatone
     count=$(ps -ef | grep juicefs | grep mount | grep -v grep | wc -l)
     [[ $count -ne 4 ]] && echo "mount process count should be 4, count=$count" && exit 1 || true
     umount /tmp/jfs

@@ -21,7 +21,7 @@ JuiceFS 广泛适用于各种数据存储和共享场景，本页汇总来自世
 - [AI 场景存储优化：云知声超算平台基于 JuiceFS 的存储实践](https://juicefs.com/zh-cn/blog/user-stories/juicefs-support-ai-storage-at-unisound)，2022-06-28，吕冬冬@云知声
 - [上汽云 x JuiceFS：iGear 用了这个小魔法，模型训练速度提升 300%](https://juicefs.com/zh-cn/blog/user-stories/performance-boost-3x-on-igear-platform)，2022-01-27，上汽云 iGear
 - [PaddlePaddle x JuiceFS : 全新缓存组件，大幅加速云上飞桨分布式训练作业](https://juicefs.com/zh-cn/blog/solutions/juicefs-helps-paddlepaddle-boosting-performance)，2022-01-06，百度 PaddlePaddle 团队
-- [如何在 Kubernetes 集群中玩转 Fluid + JuiceFS](https://juicefs.com/zh-cn/blog/solutions/fluid-with-juicefs)，2021-12-01，吕冬冬@云知声 & 朱唯唯@Juicedata
+- [如何在 Kubernetes 集群中玩转 Fluid + JuiceFS](https://juicefs.com/zh-cn/blog/solutions/fluid-with-juicefs)，2021-12-01，吕冬冬@云知声 & 朱唯唯@leonatone
 - [百亿级小文件存储，JuiceFS 在自动驾驶行业的最佳实践](https://juicefs.com/zh-cn/blog/user-stories/ten-billion-level-small-files-storage-juicefs-best-practice-in-the-autonomous-driving-industry)，2021-10-28，高昌健
 - [初探云原生下的 AI 分布式文件系统-JuiceFS](https://mp.weixin.qq.com/s/AiI0lVgFwycmK9Rl-6KW4w)，2021-08-18，屈骏@梯度科技
 - [如何借助 JuiceFS 为 AI 模型训练提速 7 倍](https://juicefs.com/blog/cn/posts/how-to-use-juicefs-to-speed-up-ai-model-training-by-7-times)
@@ -66,7 +66,7 @@ JuiceFS 广泛适用于各种数据存储和共享场景，本页汇总来自世
 - [JuiceFS CSI Driver 架构设计详解](https://juicefs.com/zh-cn/blog/engineering/juicefs-csi-driver-arch-design)，2022-03-23，朱唯唯
 - [JuiceFS 在火山引擎边缘计算的应用实践](https://juicefs.com/zh-cn/blog/user-stories/how-juicefs-accelerates-edge-rendering-performance-in-volcengine)，2023-02-17
 ，何兰州
-- [使用 KubeSphere 应用商店 5 分钟内快速部署 JuiceFS](https://juicefs.com/zh-cn/blog/solutions/kubesphere-with-juicefs)，2021-11-19，尹珉@杭州数跑科技 & 朱唯唯@Juicedata
+- [使用 KubeSphere 应用商店 5 分钟内快速部署 JuiceFS](https://juicefs.com/zh-cn/blog/solutions/kubesphere-with-juicefs)，2021-11-19，尹珉@杭州数跑科技 & 朱唯唯@leonatone
 - [JuiceFS CSI Driver 的最佳实践](https://juicefs.com/zh-cn/blog/engineering/csi-driver-best-practices)，2021-11-08，朱唯唯
 - [JuiceFS CSI Driver v0.10 全新架构解读](https://juicefs.com/zh-cn/blog/engineering/juicefs-csi-driver-v010)，2021-07-28，朱唯唯
 

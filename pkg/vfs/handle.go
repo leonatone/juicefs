@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2020 Juicedata, Inc.
+ * JuiceFS, Copyright 2020 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/meta"
+	"github.com/leonatone/juicefs/pkg/utils"
 )
 
 type handle struct {

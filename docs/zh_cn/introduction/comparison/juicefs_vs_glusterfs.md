@@ -31,7 +31,7 @@ description: 本文对比 JuiceFS 和 GlusterFS 的架构、元数据管理、�
 | 目录配额 | 支持 | 支持 |
 | 快照 | 支持 | 不支持（但支持克隆） |
 | 回收站 | 支持 | 支持 |
-| 主要维护者 | Red Hat, Inc | Juicedata, Inc |
+| 主要维护者 | Red Hat, Inc | leonatone, Inc |
 | 开发语言 | C | Go |
 | 开源协议 | GPLV2 and LGPLV3+ | Apache License 2.0 |
 

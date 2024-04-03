@@ -2,7 +2,7 @@
 // +build !nos3
 
 /*
- * JuiceFS, Copyright 2018 Juicedata, Inc.
+ * JuiceFS, Copyright 2018 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,11 +33,11 @@ import (
 	"github.com/pkg/errors"
 
 	aws2 "github.com/aws/aws-sdk-go/aws"
-	"github.com/juicedata/juicefs/pkg/utils"
 	"github.com/ks3sdklib/aws-sdk-go/aws"
 	"github.com/ks3sdklib/aws-sdk-go/aws/awserr"
 	"github.com/ks3sdklib/aws-sdk-go/aws/credentials"
 	"github.com/ks3sdklib/aws-sdk-go/service/s3"
+	"github.com/leonatone/juicefs/pkg/utils"
 )
 
 const s3StorageClassHdr = "X-Amz-Storage-Class"

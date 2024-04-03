@@ -33,13 +33,13 @@ To install JuiceFS CSI Driver, you first need to create an application template.
 Click in the workspace to enter the application management, select "App Repositories", click the create button to add JuiceFS CSI Repository, fill in:
 
 - Repository name: `juicefs-csi-driver`
-- Index URL: `https://juicedata.github.io/charts/`
+- Index URL: `https://leonatone.github.io/charts/`
 
 ![kubesphere_app_shop_en](../images/kubesphere_app_shop_en.png)
 
 #### Method two: Application Template
 
-Download the chart compressed package from the JuiceFS CSI Driver warehouse: <https://github.com/juicedata/juicefs-csi-driver/releases>.
+Download the chart compressed package from the JuiceFS CSI Driver warehouse: <https://github.com/leonatone/juicefs-csi-driver/releases>.
 
 In the "Workspace", click to enter the "App Management", select "App Templates", click "create", upload the chart compression package:
 

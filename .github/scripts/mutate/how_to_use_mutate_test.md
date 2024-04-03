@@ -11,7 +11,7 @@ there are several kind of mutants:
 1. open the github action workflow page.
 2. click "run mutate test" step.
 3. search "tests passed " keyword, all the "tests passed -> FAIL" mutants are failed.
-you can try here: https://github.com/juicedata/juicefs/actions/runs/3565436367/jobs/5990603552
+you can try here: https://github.com/leonatone/juicefs/actions/runs/3565436367/jobs/5990603552
 # how to fix failed mutants?
 1. open the github action workflow page.
 2. click "run mutate test" step.

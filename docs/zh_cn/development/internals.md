@@ -33,10 +33,10 @@ slug: /internals
 
 ## 代码结构 {#source-code-structure}
 
-[JuiceFS 源码](https://github.com/juicedata/juicefs)的大体结构如下：
+[JuiceFS 源码](https://github.com/leonatone/juicefs)的大体结构如下：
 
-* [`cmd`](https://github.com/juicedata/juicefs/tree/main/cmd) 是代码结构总入口，所有相关功能都能在此找到入口，如 `juicefs format` 命令对应着 `cmd/format.go`；
-* [`pkg`](https://github.com/juicedata/juicefs/tree/main/pkg) 是具体实现，核心逻辑都在其中：
+* [`cmd`](https://github.com/leonatone/juicefs/tree/main/cmd) 是代码结构总入口，所有相关功能都能在此找到入口，如 `juicefs format` 命令对应着 `cmd/format.go`；
+* [`pkg`](https://github.com/leonatone/juicefs/tree/main/pkg) 是具体实现，核心逻辑都在其中：
   * `pkg/fuse/fuse.go` 是 FUSE 实现的入口，提供抽象 FUSE 接口；
   * `pkg/vfs` 是具体的 FUSE 接口实现，元数据请求会调用 `pkg/meta` 中的实现，读请求会调用 `pkg/vfs/reader.go`，写请求会调用 `pkg/vfs/writer.go`；
   * `pkg/meta` 目录中是所有元数据引擎的实现，其中：
@@ -45,7 +45,7 @@ slug: /internals
     * `pkg/meta/sql.go` 是关系型数据库的接口定义及通用接口实现，特定数据库的实现在单独文件中（如 MySQL 的实现在 `pkg/meta/sql_mysql.go`）
     * `pkg/meta/tkv.go` 是 KV 类数据库的接口定义及通用接口实现，特定数据库的实现在单独文件中（如 TiKV 的实现在 `pkg/meta/tkv_tikv.go`）
   * `pkg/object` 是与各种对象存储对接的实现。
-* [`sdk/java`](https://github.com/juicedata/juicefs/tree/main/sdk/java) 是 Hadoop Java SDK 的实现，底层依赖 `sdk/java/libjfs` 这个库（通过 JNI 调用）。
+* [`sdk/java`](https://github.com/leonatone/juicefs/tree/main/sdk/java) 是 Hadoop Java SDK 的实现，底层依赖 `sdk/java/libjfs` 这个库（通过 JNI 调用）。
 
 ## FUSE 接口实现 {#fuse-interface-implementation}
 

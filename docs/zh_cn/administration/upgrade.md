@@ -31,7 +31,7 @@ JuiceFS 客户端只有一个二进制程序，升级新版只需用新版程序
 
 ### 通过 kubectl 升级
 
-下载并修改 S3 网关[部署 YAML](https://github.com/juicedata/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) 中的 `juicedata/juicefs-csi-driver` 镜像标签为想要升级的版本（关于所有版本的详细说明请参考[这里](https://github.com/juicedata/juicefs-csi-driver/releases)），然后运行以下命令：
+下载并修改 S3 网关[部署 YAML](https://github.com/leonatone/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) 中的 `leonatone/juicefs-csi-driver` 镜像标签为想要升级的版本（关于所有版本的详细说明请参考[这里](https://github.com/leonatone/juicefs-csi-driver/releases)），然后运行以下命令：
 
 ```shell
 kubectl apply -f ./juicefs-s3-gateway.yaml

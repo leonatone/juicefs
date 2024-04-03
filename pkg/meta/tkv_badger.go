@@ -2,7 +2,7 @@
 // +build !nobadger
 
 /*
- * JuiceFS, Copyright 2022 Juicedata, Inc.
+ * JuiceFS, Copyright 2022 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import (
 	"time"
 
 	badger "github.com/dgraph-io/badger/v4"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/utils"
 )
 
 type badgerTxn struct {

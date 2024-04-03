@@ -69,7 +69,7 @@ Compilation depends on the following tools:
 Clone the repository:
 
 ```shell
-git clone https://github.com/juicedata/juicefs.git
+git clone https://github.com/leonatone/juicefs.git
 ```
 
 Enter the directory and compile:

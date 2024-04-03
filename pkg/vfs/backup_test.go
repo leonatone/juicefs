@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2021 Juicedata, Inc.
+ * JuiceFS, Copyright 2021 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/object"
-	osync "github.com/juicedata/juicefs/pkg/sync"
+	"github.com/leonatone/juicefs/pkg/object"
+	osync "github.com/leonatone/juicefs/pkg/sync"
 )
 
 func TestRotate(t *testing.T) {

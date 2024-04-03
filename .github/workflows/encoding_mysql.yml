@@ -31,7 +31,7 @@ jobs:
 
       - name: Download old linux target
         run: |
-          url=https://github.com/juicedata/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
+          url=https://github.com/leonatone/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
           wget -q $url 
           tar -zxf $(basename $url)
           mv juicefs juicefs_old
@@ -293,7 +293,7 @@ jobs:
 
       - name: Send Slack Notification
         if: failure() 
-        uses: juicedata/slack-notify-action@main
+        uses: leonatone/slack-notify-action@main
         with:
           channel-id: "${{ secrets.SLACK_CHANNEL_ID_FOR_PR_CHECK_NOTIFY }}"
           slack_bot_token: "${{ secrets.SLACK_BOT_TOKEN }}"

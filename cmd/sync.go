@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2018 Juicedata, Inc.
+ * JuiceFS, Copyright 2018 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/juicedata/juicefs/pkg/metric"
-	"github.com/juicedata/juicefs/pkg/object"
-	"github.com/juicedata/juicefs/pkg/sync"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/metric"
+	"github.com/leonatone/juicefs/pkg/object"
+	"github.com/leonatone/juicefs/pkg/sync"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/collectors"
 	"github.com/urfave/cli/v2"

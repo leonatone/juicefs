@@ -51,4 +51,4 @@ slug: /adopters
 | [BentoML](https://bentoml.com)                      | Production  | AI                |                                                                                                                                                                                                                             |
 | [coSence](https://www.coscene.io)                      | Production  | AI                |                                                                                                                                                                                                                             |
 
-You are welcome to share your experience after using JuiceFS, either by submitting a Pull Request directly to this list, or by contacting us at [`hello@juicedata.io`](mailto:hello@juicedata.io).
+You are welcome to share your experience after using JuiceFS, either by submitting a Pull Request directly to this list, or by contacting us at [`hello@leonatone.io`](mailto:hello@leonatone.io).

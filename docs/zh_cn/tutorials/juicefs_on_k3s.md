@@ -6,7 +6,7 @@ slug: /juicefs_on_k3s
 
 [K3s](https://k3s.io) 是一个经过功能优化的 Kubernetes 发行版，它与 Kubernetes 完全兼容，即几乎所有在 Kubernetes 的操作都可以在 K3s 上执行。K3s 将整个容器编排系统打包进了一个容量不足 100MB 的二进制程序，减少了部署 Kubernetes 生产集群的环境依赖，大大降低了安装难度，对系统硬件的性能要求也更低。
 
-在本文中，我们会建立一个包含两个节点的 K3s 集群，为集群安装并配置使用 [JuiceFS CSI Driver](https://github.com/juicedata/juicefs-csi-driver)，最后会创建一个 NGINX 容器进行验证。
+在本文中，我们会建立一个包含两个节点的 K3s 集群，为集群安装并配置使用 [JuiceFS CSI Driver](https://github.com/leonatone/juicefs-csi-driver)，最后会创建一个 NGINX 容器进行验证。
 
 ## 部署 K3s 集群
 
@@ -75,7 +75,7 @@ k3s-n1   Ready    <none>                 28h   v1.21.4+k3s1
 这里我们用 kubectl 安装，执行以下命令安装 JuiceFS CSI Driver：
 
 ```shell
-kubectl apply -f https://raw.githubusercontent.com/juicedata/juicefs-csi-driver/master/deploy/k8s.yaml
+kubectl apply -f https://raw.githubusercontent.com/leonatone/juicefs-csi-driver/master/deploy/k8s.yaml
 ```
 
 ### 创建存储类

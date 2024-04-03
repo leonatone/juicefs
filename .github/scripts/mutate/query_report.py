@@ -5,7 +5,7 @@ import MySQLdb
 
 def query_report(repo, run_id):
     passowrd = os.environ['MYSQL_PASSWORD']
-    db = MySQLdb.connect(host="8.210.231.144", user="juicedata", passwd=passowrd, db="mutate")
+    db = MySQLdb.connect(host="8.210.231.144", user="leonatone", passwd=passowrd, db="mutate")
     db.query(f"""SELECT job_name, github_job_url, passed, failed, compile_error, out_of_coverage, skip_by_comment, others FROM report 
         WHERE github_repo="{repo}" AND github_run_id={run_id}""")
     r=db.store_result()
@@ -24,7 +24,7 @@ def query_report(repo, run_id):
 if __name__ == "__main__":
     repo = os.environ.get('GITHUB_REPOSITORY')
     run_id = os.environ.get('GITHUB_RUN_ID')
-    # repo = 'juicedata/juicefs'
+    # repo = 'leonatone/juicefs'
     # run_id = '3608212346'
     print(f'repo is {repo}, run_id is {run_id}', file=sys.stderr)
     query_report(repo, run_id)

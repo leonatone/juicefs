@@ -69,7 +69,7 @@ COPYRIGHT:
 
 ## Auto completion {#auto-completion}
 
-To enable commands completion, simply source the script provided within [`hack/autocomplete`](https://github.com/juicedata/juicefs/tree/main/hack/autocomplete) directory. For example:
+To enable commands completion, simply source the script provided within [`hack/autocomplete`](https://github.com/leonatone/juicefs/tree/main/hack/autocomplete) directory. For example:
 
 <Tabs groupId="juicefs-cli-autocomplete">
   <TabItem value="bash" label="Bash">
@@ -295,7 +295,7 @@ juicefs destroy redis://localhost e94d66a8-2339-4abd-b8d8-6812df737892
 
 ### `juicefs gc` {#gc}
 
-If for some reason, a object storage block escape JuiceFS management completely, i.e. the metadata is gone, but the block still persists in the object storage, and cannot be released, this is called an "object leak". If this happens without any special file system manipulation, it could well indicate a bug within JuiceFS, file a [GitHub Issue](https://github.com/juicedata/juicefs/issues/new/choose) to let us know.
+If for some reason, a object storage block escape JuiceFS management completely, i.e. the metadata is gone, but the block still persists in the object storage, and cannot be released, this is called an "object leak". If this happens without any special file system manipulation, it could well indicate a bug within JuiceFS, file a [GitHub Issue](https://github.com/leonatone/juicefs/issues/new/choose) to let us know.
 
 Meanwhile, you can run this command to deal with leaked objects. It also deletes stale slices produced by file overwrites. See [Status Check & Maintenance](../administration/status_check_and_maintenance.md#gc).
 
@@ -635,7 +635,7 @@ juicefs mount redis://localhost /mnt/jfs --backup-meta 0
 |`--backup-skip-trash` <VersionAdd>1.2</VersionAdd>|skip files and directories in trash when backup metadata.|
 |`--heartbeat=12`|interval (in seconds) to send heartbeat; it's recommended that all clients use the same heartbeat value (default: "12")|
 |`--read-only`|allow lookup/read operations only (default: false)|
-|`--no-bgjob`|Disable background jobs, default to false, which means clients by default carry out background jobs, including:<br/><ul><li>Clean up expired files in Trash (look for `cleanupDeletedFiles`, `cleanupTrash` in [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go))</li><li>Delete slices that's not referenced (look for `cleanupSlices` in [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go))</li><li>Clean up stale client sessions (look for `CleanStaleSessions` in [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go))</li></ul>Note that compaction isn't affected by this option, it happens automatically with file reads and writes, client will check if compaction is in need, and run in background (take Redis for example, look for `compactChunk` in [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/redis.go)).|
+|`--no-bgjob`|Disable background jobs, default to false, which means clients by default carry out background jobs, including:<br/><ul><li>Clean up expired files in Trash (look for `cleanupDeletedFiles`, `cleanupTrash` in [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go))</li><li>Delete slices that's not referenced (look for `cleanupSlices` in [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go))</li><li>Clean up stale client sessions (look for `CleanStaleSessions` in [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go))</li></ul>Note that compaction isn't affected by this option, it happens automatically with file reads and writes, client will check if compaction is in need, and run in background (take Redis for example, look for `compactChunk` in [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/redis.go)).|
 |`--atime-mode=noatime` <VersionAdd>1.1</VersionAdd> |Control atime (last time the file was accessed) behavior, support the following modes:<br/><ul><li>`noatime` (default): set when the file is created or when `SetAttr` is explicitly called. Accessing and modifying the file will not affect atime, tracking atime comes at a performance cost, so this is the default behavior</li><li>`relatime`: update inode access times relative to mtime (last time when the file data was modified) or ctime (last time when file metadata was changed). Only update atime if atime was earlier than the current mtime or ctime, or the file's atime is more than 1 day old</li><li>`strictatime`: always update atime on access</li></ul>|
 |`--skip-dir-nlink value` <VersionAdd>1.1</VersionAdd> |number of retries after which the update of directory nlink will be skipped (used for tkv only, 0 means never) (default: 20)|
 

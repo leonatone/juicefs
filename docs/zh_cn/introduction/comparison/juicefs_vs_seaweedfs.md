@@ -4,9 +4,9 @@ slug: /comparison/juicefs_vs_seaweedfs
 description: 本文对比 JuiceFS 和 SeaweedFS 的架构、存储机制、客户端协议及其他高级功能。
 ---
 
-[SeaweedFS](https://github.com/seaweedfs/seaweedfs) 与 [JuiceFS](https://github.com/juicedata/juicefs) 皆是开源的高性能分布式文件存储系统，但二者存在诸多设计区别与功能差异，本章将会详述他们的区别和各自适用场景，帮助你的团队进行技术选型。
+[SeaweedFS](https://github.com/seaweedfs/seaweedfs) 与 [JuiceFS](https://github.com/leonatone/juicefs) 皆是开源的高性能分布式文件存储系统，但二者存在诸多设计区别与功能差异，本章将会详述他们的区别和各自适用场景，帮助你的团队进行技术选型。
 
-SeaweedFS 和 JuiceFS 都采用了对商用更友好的 Apache License 2.0，但 JuiceFS 分为[社区版](https://juicefs.com/docs/zh/community/introduction)和[企业版](https://juicefs.com/zh-cn/blog/solutions/juicefs-enterprise-edition-features-vs-community-edition)，企业版提供多种交付形式，例如私有部署和[云服务](https://juicefs.com/docs/zh/cloud)。JuiceFS 企业版使用自研的闭源元数据引擎，其客户端则与[社区版](https://github.com/juicedata/juicefs)大量共享代码。你可以通过下表速查两者的关键特性对比，然后在本文中选取感兴趣的话题详细阅读。
+SeaweedFS 和 JuiceFS 都采用了对商用更友好的 Apache License 2.0，但 JuiceFS 分为[社区版](https://juicefs.com/docs/zh/community/introduction)和[企业版](https://juicefs.com/zh-cn/blog/solutions/juicefs-enterprise-edition-features-vs-community-edition)，企业版提供多种交付形式，例如私有部署和[云服务](https://juicefs.com/docs/zh/cloud)。JuiceFS 企业版使用自研的闭源元数据引擎，其客户端则与[社区版](https://github.com/leonatone/juicefs)大量共享代码。你可以通过下表速查两者的关键特性对比，然后在本文中选取感兴趣的话题详细阅读。
 
 ## JuiceFS 和 SeaweedFS 对比一览
 
@@ -33,7 +33,7 @@ SeaweedFS 和 JuiceFS 都采用了对商用更友好的 Apache License 2.0，但
 | 回收站 | 不支持 | 支持 |
 | 运维与监控 | 支持 | 支持 |
 | 发布时间 | 2015.4 | 2021.1 |
-| 主要维护者 | 个人（Chris Lu） | 公司（Juicedata Inc） |
+| 主要维护者 | 个人（Chris Lu） | 公司（leonatone Inc） |
 | 语言 | Go | Go |
 | 开源协议 | Apache License 2.0 | Apache License 2.0 |
 
@@ -154,7 +154,7 @@ JuiceFS [完整兼容 HDFS API](../../deployment/hadoop_java_sdk.md)。包括 Ha
 二者均支持 CSI 驱动，详见：
 
 * [SeaweedFS CSI 驱动](https://github.com/seaweedfs/seaweedfs-csi-driver)
-* [JuiceFS CSI 驱动](https://github.com/juicedata/juicefs-csi-driver)
+* [JuiceFS CSI 驱动](https://github.com/leonatone/juicefs-csi-driver)
 
 ### WebDAV
 

@@ -60,8 +60,8 @@ JuiceFS 提供一些 Grafana 的仪表盘模板，将模板导入以后就可以
 
 | 模板名称                                                                                                        | 说明                                                                         |
 |-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| [`grafana_template.json`](https://github.com/juicedata/juicefs/blob/main/docs/en/grafana_template.json)         | 用于展示自挂载点、S3 网关（非 Kubernetes 部署）及 Hadoop Java SDK 收集的指标 |
-| [`grafana_template_k8s.json`](https://github.com/juicedata/juicefs/blob/main/docs/en/grafana_template_k8s.json) | 用于展示自 Kubernetes CSI 驱动、S3 网关（Kubernetes 部署）收集的指标         |
+| [`grafana_template.json`](https://github.com/leonatone/juicefs/blob/main/docs/en/grafana_template.json)         | 用于展示自挂载点、S3 网关（非 Kubernetes 部署）及 Hadoop Java SDK 收集的指标 |
+| [`grafana_template_k8s.json`](https://github.com/leonatone/juicefs/blob/main/docs/en/grafana_template_k8s.json) | 用于展示自 Kubernetes CSI 驱动、S3 网关（Kubernetes 部署）收集的指标         |
 
 Grafana 仪表盘如下图：
 

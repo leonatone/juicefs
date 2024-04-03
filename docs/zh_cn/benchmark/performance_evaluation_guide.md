@@ -42,11 +42,11 @@ juicefs bench /mnt/jfs -p 4
 
 测试结果以表格形式呈现，其中 `ITEM` 代表测试的项目，`VALUE` 代表每秒的处理能力（吞吐量、文件数、操作数等），`COST` 代表每个文件或操作所需的时间。
 
-各项性能指标会显示为绿色、黄色或红色区分性能表现。若您的结果中有红色指标，请先检查相关配置，需要帮助可以在 [GitHub Discussions](https://github.com/juicedata/juicefs/discussions) 详细描述你的问题。
+各项性能指标会显示为绿色、黄色或红色区分性能表现。若您的结果中有红色指标，请先检查相关配置，需要帮助可以在 [GitHub Discussions](https://github.com/leonatone/juicefs/discussions) 详细描述你的问题。
 
 ![bench](../images/bench-guide-bench.png)
 
-`juicefs bench` 基准性能测试的具体流程如下（它的实现逻辑非常简单，有兴趣了解细节的可以直接看[源码](https://github.com/juicedata/juicefs/blob/main/cmd/bench.go))：
+`juicefs bench` 基准性能测试的具体流程如下（它的实现逻辑非常简单，有兴趣了解细节的可以直接看[源码](https://github.com/leonatone/juicefs/blob/main/cmd/bench.go))：
 
 1. N 并发各写 1 个 1 GiB 的大文件，IO 大小为 1 MiB
 2. N 并发各读 1 个之前写的 1 GiB 的大文件，IO 大小为 1 MiB

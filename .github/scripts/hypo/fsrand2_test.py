@@ -3,7 +3,7 @@ from fsrand2 import JuicefsMachine
 
 class TestFsrand2(unittest.TestCase):
     def test_hardlink_795(self):
-        # reproduce https://github.com/juicedata/jfs/issues/795
+        # reproduce https://github.com/leonatone/jfs/issues/795
         for i in range(10):
             state = JuicefsMachine()
             v1 = state.init_folders()
@@ -13,7 +13,7 @@ class TestFsrand2(unittest.TestCase):
             state.teardown()
 
     def test_hardlink_769(self):
-        # reproduce nlink issue: https://github.com/juicedata/jfs/issues/769
+        # reproduce nlink issue: https://github.com/leonatone/jfs/issues/769
         for i in range(10):
             state = JuicefsMachine()
             v1 = state.init_folders()
@@ -24,7 +24,7 @@ class TestFsrand2(unittest.TestCase):
             state.teardown()
 
     def test_listdir_910(self):
-        # See: https://github.com/juicedata/jfs/issues/910
+        # See: https://github.com/leonatone/jfs/issues/910
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'', file_name='aaaa', mode='w', parent=v1, user='root')
@@ -35,7 +35,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_fallocate_914(self):
-        # See: https://github.com/juicedata/jfs/issues/914
+        # See: https://github.com/leonatone/jfs/issues/914
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'yl\xff{', file_name='tadj', mode='x', parent=v1, user='root')
@@ -44,7 +44,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_clone_918(self):
-        # See: https://github.com/juicedata/jfs/issues/918
+        # See: https://github.com/leonatone/jfs/issues/918
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'', file_name='lcka', mode='w', parent=v1, user='root')

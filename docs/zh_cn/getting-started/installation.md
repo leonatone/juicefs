@@ -24,7 +24,7 @@ curl -sSL https://d.juicefs.com/install | sh -s /tmp
 
 ## 安装预编译客户端 {#install-the-pre-compiled-client}
 
-你可以在 [GitHub](https://github.com/juicedata/juicefs/releases) 找到最新版客户端下载地址，每个版本的下载列表中都提供了面向不同 CPU 架构和操作系统的预编译版本，请注意识别选择，例如：
+你可以在 [GitHub](https://github.com/leonatone/juicefs/releases) 找到最新版客户端下载地址，每个版本的下载列表中都提供了面向不同 CPU 架构和操作系统的预编译版本，请注意识别选择，例如：
 
 | 文件名                               | 说明                                                                            |
 |--------------------------------------|---------------------------------------------------------------------------------|
@@ -42,13 +42,13 @@ curl -sSL https://d.juicefs.com/install | sh -s /tmp
 1. 获取最新的版本号
 
    ```shell
-   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
    ```
 
 2. 下载客户端到当前目录
 
    ```shell
-   wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+   wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
    ```
 
 3. 解压安装包
@@ -86,7 +86,7 @@ sudo apt-get install juicefs
 
 #### Fedora Copr
 
-JuiceFS 也提供 [Copr](https://copr.fedorainfracloud.org/coprs/juicedata/juicefs) 仓库，可以方便地在 Red Hat 及其衍生系统上安装最新版的客户端，目前支持的系统有：
+JuiceFS 也提供 [Copr](https://copr.fedorainfracloud.org/coprs/leonatone/juicefs) 仓库，可以方便地在 Red Hat 及其衍生系统上安装最新版的客户端，目前支持的系统有：
 
 - **Amazonlinux 2023**
 - **CentOS 8, 9**
@@ -97,14 +97,14 @@ JuiceFS 也提供 [Copr](https://copr.fedorainfracloud.org/coprs/juicedata/juice
 
 ```shell
 # 启用 Copr 仓库
-sudo dnf copr enable -y juicedata/juicefs
+sudo dnf copr enable -y leonatone/juicefs
 # 安装客户端
 sudo dnf install juicefs
 ```
 
 #### Snapcraft
 
-我们也在 [Canonical Snapcraft](https://snapcraft.io) 平台打包并发布了 [Snap 版本的 JuiceFS 客户端](https://github.com/juicedata/juicefs-snapcraft)，对于 Ubuntu 16.04 及以上版本和其他支持 Snap 的操作系统，可以直接使用以下命令安装：
+我们也在 [Canonical Snapcraft](https://snapcraft.io) 平台打包并发布了 [Snap 版本的 JuiceFS 客户端](https://github.com/leonatone/juicefs-snapcraft)，对于 Ubuntu 16.04 及以上版本和其他支持 Snap 的操作系统，可以直接使用以下命令安装：
 
 ```shell
 sudo snap install juicefs
@@ -236,8 +236,8 @@ RUN apt update && apt install -y curl fuse && \
 RUN set -x && \
     mkdir /juicefs && \
     cd /juicefs && \
-    JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v') && \
-    curl -s -L "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz" \
+    JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v') && \
+    curl -s -L "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz" \
     | tar -zx && \
     install juicefs /usr/bin && \
     cd .. && \
@@ -266,7 +266,7 @@ CMD [ "juicefs" ]
 1. 克隆源码
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git
+   git clone https://github.com/leonatone/juicefs.git
    ```
 
 2. 进入源代码目录
@@ -310,7 +310,7 @@ CMD [ "juicefs" ]
 1. 克隆并进入项目目录
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git && cd juicefs
+   git clone https://github.com/leonatone/juicefs.git && cd juicefs
    ```
 
 2. 复制 WinFsp 头文件
@@ -366,7 +366,7 @@ make juicefs.exe
 1. 克隆并进入项目目录
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git && cd juicefs
+   git clone https://github.com/leonatone/juicefs.git && cd juicefs
    ```
 
 2. 安装依赖

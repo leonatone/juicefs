@@ -14,30 +14,30 @@ docker run -d --name nginx \
   nginx
 ```
 
-如果你对挂载管理有着更高的要求，比如希望通过 Docker 来管理挂载点，方便不同的应用容器使用不同的 JuiceFS 文件系统，还可以通过[卷插件](https://github.com/juicedata/docker-volume-juicefs)（Docker volume plugin）与 Docker 引擎集成。
+如果你对挂载管理有着更高的要求，比如希望通过 Docker 来管理挂载点，方便不同的应用容器使用不同的 JuiceFS 文件系统，还可以通过[卷插件](https://github.com/leonatone/docker-volume-juicefs)（Docker volume plugin）与 Docker 引擎集成。
 
 ## 卷插件 {#volume-plugin}
 
-在 Docker 中，插件也是一个容器镜像，[JuiceFS 卷插件镜像](https://hub.docker.com/r/juicedata/juicefs)中内置了 [JuiceFS 社区版](../introduction/README.md)以及 [JuiceFS 云服务](https://juicefs.com/docs/zh/cloud)客户端，安装以后，便能够运行卷插件，在 Docker 中创建 JuiceFS Volume。
+在 Docker 中，插件也是一个容器镜像，[JuiceFS 卷插件镜像](https://hub.docker.com/r/leonatone/juicefs)中内置了 [JuiceFS 社区版](../introduction/README.md)以及 [JuiceFS 云服务](https://juicefs.com/docs/zh/cloud)客户端，安装以后，便能够运行卷插件，在 Docker 中创建 JuiceFS Volume。
 
 通过下面的命令安装插件，按照提示为 FUSE 提供必要的权限：
 
 ```shell
-docker plugin install juicedata/juicefs
+docker plugin install leonatone/juicefs
 ```
 
 你可以使用以下命令管理卷插件：
 
 ```shell
 # 停用插件
-docker plugin disable juicedata/juicefs
+docker plugin disable leonatone/juicefs
 
 # 升级插件（需先停用）
-docker plugin upgrade juicedata/juicefs
-docker plugin enable juicedata/juicefs
+docker plugin upgrade leonatone/juicefs
+docker plugin enable leonatone/juicefs
 
 # 卸载插件
-docker plugin rm juicedata/juicefs
+docker plugin rm leonatone/juicefs
 ```
 
 ### 创建存储卷 {#create-volume}
@@ -45,7 +45,7 @@ docker plugin rm juicedata/juicefs
 请将以下命令中的 `<VOLUME_NAME>`、`<META_URL>`、`<STORAGE_TYPE>`、`<BUCKET_NAME>`、`<ACCESS_KEY>`、`<SECRET_KEY>` 替换成你自己的文件系统配置。
 
 ```shell
-docker volume create -d juicedata/juicefs \
+docker volume create -d leonatone/juicefs \
   -o name=<VOLUME_NAME> \
   -o metaurl=<META_URL> \
   -o storage=<STORAGE_TYPE> \
@@ -58,7 +58,7 @@ docker volume create -d juicedata/juicefs \
 对于已经预先创建好的文件系统，在用其创建卷插件时，只需指定文件系统名称和数据库地址，例如：
 
 ```shell
-docker volume create -d juicedata/juicefs \
+docker volume create -d leonatone/juicefs \
   -o name=<VOLUME_NAME> \
   -o metaurl=<META_URL> \
   jfsvolume
@@ -90,12 +90,12 @@ busybox:
     - jfsvolume:/jfs
 volumes:
   jfsvolume:
-    driver: juicedata/juicefs
+    driver: leonatone/juicefs
     driver_opts:
       name: ${VOL_NAME}
       # 因为 SQLite 在插件容器本地路径创建数据库文件，
       # sqlite:// 将在服务重启时失败。
-      # （详见 https://github.com/juicedata/docker-volume-juicefs/issues/37）
+      # （详见 https://github.com/leonatone/docker-volume-juicefs/issues/37）
       metaurl: ${META_URL}
       storage: ${STORAGE_TYPE}
       bucket: ${BUCKET}
@@ -149,15 +149,15 @@ docker-compose down --volumes
 
 在 Docker 容器中挂载 JuiceFS 通常有两种作用，一种是为容器中的应用提供存储，另一种是把容器中挂载的 JuiceFS 存储映射给主机读写使用。
 
-JuiceFS 官方维护的镜像 [`juicedata/mount`](https://hub.docker.com/r/juicedata/mount) ，可以通过 tag 指定所需要的版本。**社区版 tag 为 ce**，例如：latest、ce-v1.1.0、ce-nightly。
+JuiceFS 官方维护的镜像 [`leonatone/mount`](https://hub.docker.com/r/leonatone/mount) ，可以通过 tag 指定所需要的版本。**社区版 tag 为 ce**，例如：latest、ce-v1.1.0、ce-nightly。
 
-`latest` 标签仅包含最新的社区版，`nightly` 标签指向最新的开发版本，详情查看 [Docker hub 的 tags 页面](https://hub.docker.com/r/juicedata/mount/tags)。
+`latest` 标签仅包含最新的社区版，`nightly` 标签指向最新的开发版本，详情查看 [Docker hub 的 tags 页面](https://hub.docker.com/r/leonatone/mount/tags)。
 
 例如，使用社区版客户端创建一个 JuiceFS 卷：
 
 ```sh
 docker run --rm \
-    juicedata/mount:ce-v1.1.0 juicefs format \
+    leonatone/mount:ce-v1.1.0 juicefs format \
     --storage s3 \
     --bucket https://xxx.xxx.xxx \
     --access-key=ACCESSKEY \
@@ -170,7 +170,7 @@ docker run --rm \
 
 ```sh
 docker run --name myjfs -d \
-    juicedata/mount:ce-v1.1.0 juicefs mount \
+    leonatone/mount:ce-v1.1.0 juicefs mount \
     ...
     redis://127.0.0.1/1 myjfs /mnt
 ```

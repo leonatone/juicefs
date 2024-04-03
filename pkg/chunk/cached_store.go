@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2020 Juicedata, Inc.
+ * JuiceFS, Copyright 2020 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/compress"
-	"github.com/juicedata/juicefs/pkg/object"
-	"github.com/juicedata/juicefs/pkg/utils"
 	"github.com/juju/ratelimit"
+	"github.com/leonatone/juicefs/pkg/compress"
+	"github.com/leonatone/juicefs/pkg/object"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

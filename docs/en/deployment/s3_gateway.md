@@ -190,18 +190,18 @@ Here we have:
 - `access-key`: Access key of object storage. Read [this document](../reference/how_to_set_up_object_storage.md) for more information.
 - `secret-key`: Secret key of object storage. Read [this document](../reference/how_to_set_up_object_storage.md) for more information.
 
-Then download the S3 gateway [deployment YAML](https://github.com/juicedata/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) and create the `Deployment` and `Service` resources with `kubectl`. The following points require special attention:
+Then download the S3 gateway [deployment YAML](https://github.com/leonatone/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) and create the `Deployment` and `Service` resources with `kubectl`. The following points require special attention:
 
 - Please replace `${NAMESPACE}` in the following command with the Kubernetes namespace of the actual S3 gateway deployment, which defaults to `kube-system`.
 - The `replicas` for `Deployment` defaults to 1. Please adjust as needed.
-- The latest version of `juicedata/juicefs-csi-driver` image is used by default, which has already integrated the latest version of JuiceFS client. Please check [here](https://github.com/juicedata/juicefs-csi-driver/releases) for the specific integrated JuiceFS client version.
+- The latest version of `leonatone/juicefs-csi-driver` image is used by default, which has already integrated the latest version of JuiceFS client. Please check [here](https://github.com/leonatone/juicefs-csi-driver/releases) for the specific integrated JuiceFS client version.
 - The `initContainers` of `Deployment` will first try to format the JuiceFS file system, if you have already formatted it in advance, this step will not affect the existing JuiceFS file system.
   - The default port number that the S3 gateway listens on is 9000
 - The [startup options](../reference/command_reference.md#gateway) of S3 gateway will use default values if not specified.
 - The value of `MINIO_ROOT_USER` environment variable is `access-key` in Secret, and the value of `MINIO_ROOT_PASSWORD` environment variable is `secret-key` in Secret.
 
 ```shell
-curl -sSL https://raw.githubusercontent.com/juicedata/juicefs/main/deploy/juicefs-s3-gateway.yaml | sed "s@kube-system@${NAMESPACE}@g" | kubectl apply -f -
+curl -sSL https://raw.githubusercontent.com/leonatone/juicefs/main/deploy/juicefs-s3-gateway.yaml | sed "s@kube-system@${NAMESPACE}@g" | kubectl apply -f -
 ```
 
 Check if it's deployed successfully:
@@ -279,7 +279,7 @@ There are some differences between the various versions of Ingress. For more usa
    Execute the following three commands in sequence to deploy the JuiceFS S3 gateway with Helm (note that the following example is deployed to the `kube-system` namespace).
 
    ```sh
-   helm repo add juicefs-s3-gateway https://juicedata.github.io/charts/
+   helm repo add juicefs-s3-gateway https://leonatone.github.io/charts/
    helm repo update
    helm install juicefs-s3-gateway juicefs-s3-gateway/juicefs-s3-gateway -n kube-system -f ./values.yaml
    ```
@@ -308,18 +308,18 @@ Please see the ["Monitoring"](../administration/monitoring.md) documentation to 
 
 ## Use a full-featured S3 gateway
 
-If you need to use some advanced features of the MinIO S3 gateway, you can pull [the gateway branch of this repository](https://github.com/juicedata/minio/tree/gateway) and compile MinIO yourself. This branch is developed based on [MinIO RELEASE.2022-03-05T06-32-39Z](https://github.com/minio/minio/tree/RELEASE.2022-03-05T06-32-39Z) with JuiceFS gateway supported, which supports full functionality of MinIO gateways such as [multi-user management](https://docs.min.io/docs/minio-multi-user-quickstart-guide.html) while using JuiceFS as a backend.
+If you need to use some advanced features of the MinIO S3 gateway, you can pull [the gateway branch of this repository](https://github.com/leonatone/minio/tree/gateway) and compile MinIO yourself. This branch is developed based on [MinIO RELEASE.2022-03-05T06-32-39Z](https://github.com/minio/minio/tree/RELEASE.2022-03-05T06-32-39Z) with JuiceFS gateway supported, which supports full functionality of MinIO gateways such as [multi-user management](https://docs.min.io/docs/minio-multi-user-quickstart-guide.html) while using JuiceFS as a backend.
 
 ### Compile
 
 :::tip
-This branch relies on a newer version of JuiceFS. Please refer to the [`go.mod`](https://github.com/juicedata/minio/blob/gateway/go.mod) file for the specific JuiceFS version.
+This branch relies on a newer version of JuiceFS. Please refer to the [`go.mod`](https://github.com/leonatone/minio/blob/gateway/go.mod) file for the specific JuiceFS version.
 
 Similar to [manually compiling JuiceFS client](../getting-started/installation.md#manually-compiling), you need to install some dependencies in advance to compile S3 gateway.
 :::
 
 ```shell
-git clone -b gateway git@github.com:juicedata/minio.git && cd minio
+git clone -b gateway git@github.com:leonatone/minio.git && cd minio
 ```
 
 ```shell

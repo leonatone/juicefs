@@ -42,7 +42,7 @@ def add_perf_record(name, result, product_version,  meta, storage, extra):
     print(f'github_runner is: {github_runner}')
     created_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     product_name = 'juicefs'
-    db = MySQLdb.connect(host="8.210.231.144", user="juicedata", passwd=passowrd, db="test_result")
+    db = MySQLdb.connect(host="8.210.231.144", user="leonatone", passwd=passowrd, db="test_result")
     c = db.cursor()
     c.execute("insert into benchmark(name, result, product_name, product_version, meta, storage, github_ref_name, github_run_id, github_sha, github_runner, created_date, extra) \
         values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (name, result, product_name, product_version, meta, storage, github_ref_name, github_run_id, github_sha, github_runner, created_date, extra))

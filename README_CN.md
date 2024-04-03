@@ -1,8 +1,8 @@
-<p align="center"><a href="https://github.com/juicedata/juicefs"><img alt="JuiceFS Logo" src="docs/zh_cn/images/juicefs-logo-new.svg" width="50%" /></a></p>
+<p align="center"><a href="https://github.com/leonatone/juicefs"><img alt="JuiceFS Logo" src="docs/zh_cn/images/juicefs-logo-new.svg" width="50%" /></a></p>
 <p align="center">
-    <a href="https://github.com/juicedata/juicefs/actions/workflows/unittests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/juicedata/juicefs/unittests.yml?branch=main&label=Unit%20Testing" /></a>
-    <a href="https://github.com/juicedata/juicefs/actions/workflows/integrationtests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/juicedata/juicefs/integrationtests.yml?branch=main&label=Integration%20Testing" /></a>
-    <a href="https://goreportcard.com/report/github.com/juicedata/juicefs"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/juicedata/juicefs" /></a>
+    <a href="https://github.com/leonatone/juicefs/actions/workflows/unittests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/leonatone/juicefs/unittests.yml?branch=main&label=Unit%20Testing" /></a>
+    <a href="https://github.com/leonatone/juicefs/actions/workflows/integrationtests.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/leonatone/juicefs/integrationtests.yml?branch=main&label=Integration%20Testing" /></a>
+    <a href="https://goreportcard.com/report/github.com/leonatone/juicefs"><img alt="Go Report" src="https://goreportcard.com/badge/github.com/leonatone/juicefs" /></a>
     <a href="https://juicefs.com/docs/zh/community/introduction"><img alt="English doc" src="https://img.shields.io/badge/docs-文档中心-brightgreen" /></a>
     <a href="https://go.juicefs.com/slack"><img alt="Join Slack" src="https://badgen.net/badge/Slack/加入%20JuiceFS/0abd59?icon=slack" /></a>
 </p>
@@ -176,7 +176,7 @@ JuiceFS 的存储格式已经稳定，会被后续发布的所有版本支持。
 
 ## 反馈问题
 
-我们使用 [GitHub Issues](https://github.com/juicedata/juicefs/issues) 来管理社区反馈的问题，你也可以通过其他[渠道](#社区)跟社区联系。
+我们使用 [GitHub Issues](https://github.com/leonatone/juicefs/issues) 来管理社区反馈的问题，你也可以通过其他[渠道](#社区)跟社区联系。
 
 ## 贡献
 
@@ -184,7 +184,7 @@ JuiceFS 的存储格式已经稳定，会被后续发布的所有版本支持。
 
 ## 社区
 
-欢迎加入 [Discussions](https://github.com/juicedata/juicefs/discussions) 和 [Slack 频道](https://go.juicefs.com/slack) 跟我们的团队和其他社区成员交流。
+欢迎加入 [Discussions](https://github.com/leonatone/juicefs/discussions) 和 [Slack 频道](https://go.juicefs.com/slack) 跟我们的团队和其他社区成员交流。
 
 ## 使用量收集
 
@@ -212,7 +212,7 @@ JuiceFS 的设计参考了 [Google File System](https://research.google/pubs/pub
 
 ### 是否可以使用 Redis 集群版作为元数据引擎？
 
-可以。自 [v1.0.0 Beta3](https://github.com/juicedata/juicefs/releases/tag/v1.0.0-beta3) 版本开始 JuiceFS 支持使用 [Redis 集群版](https://redis.io/docs/manual/scaling)作为元数据引擎，不过需要注意的是 Redis 集群版要求一个事务中所有操作的 key 必须在同一个 hash slot 中，因此一个 JuiceFS 文件系统只能使用一个 hash slot。
+可以。自 [v1.0.0 Beta3](https://github.com/leonatone/juicefs/releases/tag/v1.0.0-beta3) 版本开始 JuiceFS 支持使用 [Redis 集群版](https://redis.io/docs/manual/scaling)作为元数据引擎，不过需要注意的是 Redis 集群版要求一个事务中所有操作的 key 必须在同一个 hash slot 中，因此一个 JuiceFS 文件系统只能使用一个 hash slot。
 
 请查看[「Redis 最佳实践」](https://juicefs.com/docs/zh/community/redis_best_practices)了解更多信息。
 
@@ -224,4 +224,4 @@ JuiceFS 的设计参考了 [Google File System](https://research.google/pubs/pub
 
 ## 历史加星
 
-[![Stargazers over time](https://starchart.cc/juicedata/juicefs.svg)](https://starchart.cc/juicedata/juicefs)
+[![Stargazers over time](https://starchart.cc/leonatone/juicefs.svg)](https://starchart.cc/leonatone/juicefs)

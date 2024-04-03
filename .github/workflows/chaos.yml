@@ -61,19 +61,19 @@ jobs:
       #   run: |
       #     echo GITHUB_REF is $GITHUB_REF
       #     echo GITHUB_SHA is $GITHUB_SHA
-      #     helm repo add juicefs https://juicedata.github.io/charts/
+      #     helm repo add juicefs https://leonatone.github.io/charts/
       #     helm repo update
       #     APP_VERSION=$(helm search repo juicefs/juicefs-csi-driver --versions | grep juicefs | head -1 | awk -F" " '{print $3}')
       #     echo APP_VERSION is $APP_VERSION
-      #     docker build --build-arg GITHUB_REF=$GITHUB_REF --build-arg GITHUB_SHA=$GITHUB_SHA -f .github/scripts/chaos/juicefs-csi-driver.Dockerfile -t juicedata/juicefs-csi-driver:v$APP_VERSION .
-      #     kind load docker-image juicedata/juicefs-csi-driver:v$APP_VERSION --name chart-testing
+      #     docker build --build-arg GITHUB_REF=$GITHUB_REF --build-arg GITHUB_SHA=$GITHUB_SHA -f .github/scripts/chaos/juicefs-csi-driver.Dockerfile -t leonatone/juicefs-csi-driver:v$APP_VERSION .
+      #     kind load docker-image leonatone/juicefs-csi-driver:v$APP_VERSION --name chart-testing
 
       - name: Build And Load CSI Docker Image
         run: |
-          docker build -f .github/scripts/chaos/juicefs.Dockerfile -t juicedata/mount:ci .
-          helm repo add juicefs https://juicedata.github.io/charts/
+          docker build -f .github/scripts/chaos/juicefs.Dockerfile -t leonatone/mount:ci .
+          helm repo add juicefs https://leonatone.github.io/charts/
           helm repo update
-          kind load docker-image juicedata/mount:ci --name chart-testing
+          kind load docker-image leonatone/mount:ci --name chart-testing
 
       - name: Install JuiceFS CSI Driver
         run: |
@@ -231,7 +231,7 @@ jobs:
 
       - name: Send Slack Notification
         if: failure() && github.event_name != 'workflow_dispatch' 
-        uses: juicedata/slack-notify-action@main
+        uses: leonatone/slack-notify-action@main
         with:
           channel-id: "${{ secrets.SLACK_CHANNEL_ID_FOR_PR_CHECK_NOTIFY }}"
           slack_bot_token: "${{ secrets.SLACK_BOT_TOKEN }}"

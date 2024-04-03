@@ -14,30 +14,30 @@ docker run -d --name nginx \
   nginx
 ```
 
-If you wish to control mount points using Docker, so that different application containers may use different JuiceFS file systems, you can use our [Docker volume plugin](https://github.com/juicedata/docker-volume-juicefs).
+If you wish to control mount points using Docker, so that different application containers may use different JuiceFS file systems, you can use our [Docker volume plugin](https://github.com/leonatone/docker-volume-juicefs).
 
 ## Docker volume plugin {#volume-plugin}
 
-Every Docker plugin itself is a Docker image, and [JuiceFS Docker volume plugin image](https://hub.docker.com/r/juicedata/juicefs) is packed with [JuiceFS Community Edition](../introduction/README.md) as well as [JuiceFS Cloud Service](https://juicefs.com/docs/cloud) clients, after installation, you'll be able to run this plugin, and create JuiceFS Volume inside Docker.
+Every Docker plugin itself is a Docker image, and [JuiceFS Docker volume plugin image](https://hub.docker.com/r/leonatone/juicefs) is packed with [JuiceFS Community Edition](../introduction/README.md) as well as [JuiceFS Cloud Service](https://juicefs.com/docs/cloud) clients, after installation, you'll be able to run this plugin, and create JuiceFS Volume inside Docker.
 
 Install the plugin with the following command, grant permissions when asked:
 
 ```shell
-docker plugin install juicedata/juicefs
+docker plugin install leonatone/juicefs
 ```
 
 You can manage volume plugin with the following commands:
 
 ```shell
 # Disable the volume plugin
-docker plugin disable juicedata/juicefs
+docker plugin disable leonatone/juicefs
 
 # Upgrade plugin (need to disable first)
-docker plugin upgrade juicedata/juicefs
-docker plugin enable juicedata/juicefs
+docker plugin upgrade leonatone/juicefs
+docker plugin enable leonatone/juicefs
 
 # Uninstall plugin
-docker plugin rm juicedata/juicefs
+docker plugin rm leonatone/juicefs
 ```
 
 ### Create a storage volume {#create-volume}
@@ -45,7 +45,7 @@ docker plugin rm juicedata/juicefs
 In the following command, replace `<VOLUME_NAME>`, `<META_URL>`, `<STORAGE_TYPE>`, `<BUCKET_NAME>`, `<ACCESS_KEY>`, `<SECRET_KEY>` accordingly.
 
 ```shell
-docker volume create -d juicedata/juicefs \
+docker volume create -d leonatone/juicefs \
   -o name=<VOLUME_NAME> \
   -o metaurl=<META_URL> \
   -o storage=<STORAGE_TYPE> \
@@ -58,7 +58,7 @@ docker volume create -d juicedata/juicefs \
 To use Docker volume plugin with existing JuiceFS volumes, simply specify the file system name and database address:
 
 ```shell
-docker volume create -d juicedata/juicefs \
+docker volume create -d leonatone/juicefs \
   -o name=<VOLUME_NAME> \
   -o metaurl=<META_URL> \
   jfsvolume
@@ -91,12 +91,12 @@ busybox:
     - jfsvolume:/jfs
 volumes:
   jfsvolume:
-    driver: juicedata/juicefs
+    driver: leonatone/juicefs
     driver_opts:
       name: ${VOL_NAME}
       # Because SQLite creates DB files in a local path of the plugin container,
       # sqlite:// will be failed on services restarting.
-      # (Details in https://github.com/juicedata/docker-volume-juicefs/issues/37)
+      # (Details in https://github.com/leonatone/docker-volume-juicefs/issues/37)
       metaurl: ${META_URL}
       storage: ${STORAGE_TYPE}
       bucket: ${BUCKET}
@@ -150,17 +150,17 @@ If JuiceFS Docker volume plugin is not working properly, it's recommend to [upgr
 
 Mounting JuiceFS in a Docker container usually serves two purposes, one is to provide storage for the applications in the container, and the other is to map the mount point inside container to the host.
 
-The official maintained image of JuiceFS, [`juicedata/mount`](https://hub.docker.com/r/juicedata/mount), you can specify the desired version by using tags.
+The official maintained image of JuiceFS, [`leonatone/mount`](https://hub.docker.com/r/leonatone/mount), you can specify the desired version by using tags.
 
 The tag for **the Community Edition is "ce"**, for example: latest, ce-v1.1.0, ce-nightly.
 
-The `latest` tag only contains the latest version of the Community Edition. The `nightly` tag points to the latest development version. For more details, please check the [tags page](https://hub.docker.com/r/juicedata/mount/tags) on Docker Hub.
+The `latest` tag only contains the latest version of the Community Edition. The `nightly` tag points to the latest development version. For more details, please check the [tags page](https://hub.docker.com/r/leonatone/mount/tags) on Docker Hub.
 
 For example, to create a JuiceFS volume using the community edition:
 
 ```sh
 docker run --rm \
-    juicedata/mount:ce-v1.1.0 juicefs format \
+    leonatone/mount:ce-v1.1.0 juicefs format \
     --storage s3 \
     --bucket https://xxx.xxx.xxx \
     --access-key=ACCESSKEY \
@@ -173,7 +173,7 @@ Mount this volume:
 
 ```sh
 docker run --name myjfs -d \
-    juicedata/mount:ce-v1.1.0 juicefs mount \
+    leonatone/mount:ce-v1.1.0 juicefs mount \
     ...
     redis://127.0.0.1/1 myjfs /mnt
 ```

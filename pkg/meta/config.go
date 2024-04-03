@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2020 Juicedata, Inc.
+ * JuiceFS, Copyright 2020 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/version"
+	"github.com/leonatone/juicefs/pkg/version"
 	"github.com/pkg/errors"
 )
 

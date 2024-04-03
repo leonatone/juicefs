@@ -61,7 +61,7 @@ class JuicefsMachine(RuleBasedStateMachine):
             f.write(f'init with run_id: {self.run_id}\n')
         self.formatted = False
         self.mounted = False
-        # mount at least once, see ref: https://github.com/juicedata/juicefs/issues/2717
+        # mount at least once, see ref: https://github.com/leonatone/juicefs/issues/2717
         self.mounted_by = []
         self.formatted_by = ''
         self.dumped_by = ''
@@ -201,15 +201,15 @@ class JuicefsMachine(RuleBasedStateMachine):
         if change_aksk and storage == 'minio':
             output = subprocess.check_output('mc admin user list myminio'.split())
             if not output:
-                run_cmd('mc admin user add myminio juicedata 12345678')
-                run_cmd('mc admin policy attach myminio consoleAdmin --user juicedata')
-            options.extend(['--access-key', 'juicedata'])
+                run_cmd('mc admin user add myminio leonatone 12345678')
+                run_cmd('mc admin policy attach myminio consoleAdmin --user leonatone')
+            options.extend(['--access-key', 'leonatone'])
             options.extend(['--secret-key', '12345678'])
             if version.parse('-'.join(juicefs.split('-')[1:])) <= version.parse('1.0.0-rc1'):
                 # use the latest version to set secret-key because rc1 has a bug for secret-key
                 options[0] = JuicefsMachine.JFS_BINS[1]
         if encrypt_secret and run_cmd(f'{juicefs} config --help | grep encrypt-secret') == 0:
-            # 0.17.5 store the secret without encrypt, ref: https://github.com/juicedata/juicefs/issues/2721
+            # 0.17.5 store the secret without encrypt, ref: https://github.com/leonatone/juicefs/issues/2721
             #if version.parse('-'.join(juicefs.split('-')[1:])) > version.parse('0.17.5'):
             options.append('--encrypt-secret')
         options.append('--force')
@@ -400,7 +400,7 @@ class JuicefsMachine(RuleBasedStateMachine):
         assume (self.greater_than_version_formatted(juicefs))
         assume (self.greater_than_version_mounted(juicefs))
         assume(not is_readonly(f'{JuicefsMachine.MOUNT_POINT}'))
-        # ref: https://github.com/juicedata/juicefs/pull/2776
+        # ref: https://github.com/leonatone/juicefs/pull/2776
         assert(len(self.mounted_by) > 0)
         assume(version.parse('-'.join(self.mounted_by[-1].split('-')[1:])) >= version.parse('1.1.0-dev'))
         assume(version.parse('-'.join(juicefs.split('-')[1:])) >= version.parse('1.1.0-dev'))
@@ -504,7 +504,7 @@ class JuicefsMachine(RuleBasedStateMachine):
     @precondition(lambda self: self.formatted )
     def dump(self, juicefs):
         assume (self.greater_than_version_formatted(juicefs))
-        # check this because of: https://github.com/juicedata/juicefs/issues/2717
+        # check this because of: https://github.com/leonatone/juicefs/issues/2717
         assume(juicefs in self.mounted_by)
         print('start dump')
         run_jfs_cmd([juicefs, 'dump', JuicefsMachine.META_URL, 'dump.json'])

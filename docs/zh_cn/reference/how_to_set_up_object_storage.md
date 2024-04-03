@@ -143,7 +143,7 @@ juicefs format \
 
 ## 支持的存储服务 {#supported-object-storage}
 
-如果你希望使用的存储类型不在列表中，欢迎提交需求 [issue](https://github.com/juicedata/juicefs/issues)。
+如果你希望使用的存储类型不在列表中，欢迎提交需求 [issue](https://github.com/leonatone/juicefs/issues)。
 
 | 名称                                        | 值         |
 |:-------------------------------------------:|:----------:|
@@ -822,7 +822,7 @@ juicefs format \
 
 [Gluster](https://github.com/gluster/glusterfs) 是一款开源的软件定义分布式存储，单集群能支持 PiB 级别的数据。JuiceFS 通过 `libgfapi` 库与 Gluster 集群交互，使用前需要单独编译。
 
-首先安装 `libgfapi`（版本范围 6.0 - 10.1, [10.4+ 暂不支持](https://github.com/juicedata/juicefs/issues/4043))：
+首先安装 `libgfapi`（版本范围 6.0 - 10.1, [10.4+ 暂不支持](https://github.com/leonatone/juicefs/issues/4043))：
 
 <Tabs>
   <TabItem value="debian" label="Debian 及衍生版本">

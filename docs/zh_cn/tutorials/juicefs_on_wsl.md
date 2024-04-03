@@ -59,13 +59,13 @@ WSL 安装完成以后，即可在开始菜单找到新安装的 Linux 发行版
 1. 获取最新的版本号
 
    ```shell
-   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
    ```
 
 2. 下载客户端到当前目录
 
    ```shell
-   wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+   wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
    ```
 
 3. 解压安装包

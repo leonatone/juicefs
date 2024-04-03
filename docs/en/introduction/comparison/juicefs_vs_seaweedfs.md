@@ -4,7 +4,7 @@ slug: /comparison/juicefs_vs_seaweedfs
 description: This document compares JuiceFS and SeaweedFS, covering their architecture, storage mechanisms, client protocols, and other advanced features.
 ---
 
-[SeaweedFS](https://github.com/seaweedfs/seaweedfs) and [JuiceFS](https://github.com/juicedata/juicefs) are both open-source high-performance distributed file storage systems. They operate under the business-friendly Apache License 2.0. However, JuiceFS comes in two versions: a [Community Edition](https://juicefs.com/docs/community/introduction) and an [Enterprise Edition](https://juicefs.com/en/blog/solutions/juicefs-enterprise-edition-features-vs-community-edition), you can use JuiceFS Enterprise Edition as on-premises deployment, or [use Cloud Service](https://juicefs.com/docs/cloud) directly. The Enterprise Edition uses a proprietary metadata engine, while its client shares code extensively with the [Community Edition](https://github.com/juicedata/juicefs).
+[SeaweedFS](https://github.com/seaweedfs/seaweedfs) and [JuiceFS](https://github.com/leonatone/juicefs) are both open-source high-performance distributed file storage systems. They operate under the business-friendly Apache License 2.0. However, JuiceFS comes in two versions: a [Community Edition](https://juicefs.com/docs/community/introduction) and an [Enterprise Edition](https://juicefs.com/en/blog/solutions/juicefs-enterprise-edition-features-vs-community-edition), you can use JuiceFS Enterprise Edition as on-premises deployment, or [use Cloud Service](https://juicefs.com/docs/cloud) directly. The Enterprise Edition uses a proprietary metadata engine, while its client shares code extensively with the [Community Edition](https://github.com/leonatone/juicefs).
 
 This document compares the key attributes of JuiceFS and SeaweedFS in a table and then explores them in detail. You can easily see their main differences in the table below and delve into specific topics you're interested in within this article. By highlighting their contrasts and evaluating their suitability for different use cases, this document aims to help you make informed decisions.
 
@@ -33,7 +33,7 @@ This document compares the key attributes of JuiceFS and SeaweedFS in a table an
 | Trash | Unsupported | Supported |
 | Operations and monitoring | Supported | Supported |
 | Release date | April 2015 | January 2021 |
-| Primary maintainer | Individual (Chris Lu) | Company (Juicedata Inc.) |
+| Primary maintainer | Individual (Chris Lu) | Company (leonatone Inc.) |
 | Programming language | Go | Go |
 | Open source license | Apache License 2.0 | Apache License 2.0 |
 
@@ -169,7 +169,7 @@ SeaweedFS offers [basic HDFS compatibility](https://github.com/seaweedfs/seaweed
 Both support a CSI Driver. For details, see:
 
 - [SeaweedFS CSI Driver](https://github.com/seaweedfs/seaweedfs-csi-driver)
-- [JuiceFS CSI Driver](https://github.com/juicedata/juicefs-csi-driver)
+- [JuiceFS CSI Driver](https://github.com/leonatone/juicefs-csi-driver)
 
 ## Other advanced features
 

@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2022 Juicedata, Inc.
+ * JuiceFS, Copyright 2022 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	"github.com/juicedata/juicefs/pkg/object"
-	osync "github.com/juicedata/juicefs/pkg/sync"
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/object"
+	osync "github.com/leonatone/juicefs/pkg/sync"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/urfave/cli/v2"
 	"golang.org/x/sync/errgroup"
 )

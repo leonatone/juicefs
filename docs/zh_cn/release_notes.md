@@ -1,7 +1,7 @@
 # 版本更新
 
 :::tip 提示
-所有历史版本请查看 [GitHub Releases](https://github.com/juicedata/juicefs/releases) 页面
+所有历史版本请查看 [GitHub Releases](https://github.com/leonatone/juicefs/releases) 页面
 :::
 
 ## 版本号 {#version-number}

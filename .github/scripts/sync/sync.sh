@@ -8,7 +8,7 @@ META_URL=$(get_meta_url $META)
 
 generate_source_dir(){
     rm -rf jfs_source
-    git clone https://github.com/juicedata/juicefs.git jfs_source --depth 1
+    git clone https://github.com/leonatone/juicefs.git jfs_source --depth 1
     chmod 777 jfs_source
     mkdir jfs_source/empty_dir
     dd if=/dev/urandom of=jfs_source/file bs=5M count=1
@@ -182,11 +182,11 @@ test_ignore_existing()
     diff -ur /tmp/jfs_sync_dir /tmp/rsync_dir
 }
 test_file_head(){
-    # issue link: https://github.com/juicedata/juicefs/issues/2125
+    # issue link: https://github.com/leonatone/juicefs/issues/2125
     ./juicefs format $META_URL myjfs
     ./juicefs mount $META_URL /jfs -d
     mkdir /jfs/jfs_source/
-    [[ ! -d jfs_source ]] && git clone https://github.com/juicedata/juicefs.git jfs_source
+    [[ ! -d jfs_source ]] && git clone https://github.com/leonatone/juicefs.git jfs_source
     ./juicefs sync jfs_source/ /jfs/jfs_source/  --update --perms --check-all --bwlimit=81920 --dirs --threads=30 --list-threads=3 --debug
     echo "test" > jfs_source/test_file
     mkdir -p jfs_source/test_dir

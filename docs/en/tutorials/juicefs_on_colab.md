@@ -80,7 +80,7 @@ cloud_sql_proxy -instances=juicefs-learning:europe-west1:juicefs-sql-example-1=t
 Then use the following command to create a new file system with a name as `myvolume` by using `juicefs format` command.
 Then later we can mount this file system in any other machines/instances where you have access to your cloud resources.
 
-You can download `juicefs` [here](https://github.com/juicedata/juicefs/releases).
+You can download `juicefs` [here](https://github.com/leonatone/juicefs/releases).
 
 ```shell
 juicefs format \
@@ -106,7 +106,7 @@ Note that the follow commands are run in Colab environment so there is a `!` mar
 1. Download `juicefs` to Colab runtime instance
 
    ```shell
-   ! curl -L -o juicefs.tar.gz https://github.com/juicedata/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
+   ! curl -L -o juicefs.tar.gz https://github.com/leonatone/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
    ! tar -xf juicefs.tar.gz
    ```
 

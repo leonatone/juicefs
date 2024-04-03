@@ -36,7 +36,7 @@ JuiceFS 使用对象存储来存储所有的数据，在 DigitalOcean 上使用 
 
 ### 3. 数据库
 
-与一般的文件系统不同，JuiceFS 将数据所对应的所有元数据都存储在独立的数据库，存储的数据规模越大性能越出色。目前，JuiceFS 支持 Redis、TiKV、MySQL/MariaDB、PostgreSQL、SQLite 等常见数据库，同时也在持续开发对其他数据库的支持。如果你需要的数据库暂未支持，请提交 [Issue](https://github.com/juicedata/juicefs/issues) 反馈。
+与一般的文件系统不同，JuiceFS 将数据所对应的所有元数据都存储在独立的数据库，存储的数据规模越大性能越出色。目前，JuiceFS 支持 Redis、TiKV、MySQL/MariaDB、PostgreSQL、SQLite 等常见数据库，同时也在持续开发对其他数据库的支持。如果你需要的数据库暂未支持，请提交 [Issue](https://github.com/leonatone/juicefs/issues) 反馈。
 
 在性能、规模和可靠性等方面，每种数据库都有各自的优缺点，你应该根据实际的场景需要进行选择。
 
@@ -65,13 +65,13 @@ Redis 的访问地址可以从控制台的 `Connection Details` 中找到，如�
 检测当前系统信息并设置临时的环境变量：
 
 ```shell
-JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
 ```
 
 下载适配当前系统的最新版客户端软件包：
 
 ```shell
-wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
 ```
 
 解压安装包：
@@ -131,7 +131,7 @@ COPYRIGHT:
    Apache License 2.0
 ```
 
-另外，你也可以访问 [JuiceFS GitHub Releases](https://github.com/juicedata/juicefs/releases) 页面选择其他版本进行手动安装。
+另外，你也可以访问 [JuiceFS GitHub Releases](https://github.com/leonatone/juicefs/releases) 页面选择其他版本进行手动安装。
 
 ### 2. 创建文件系统
 

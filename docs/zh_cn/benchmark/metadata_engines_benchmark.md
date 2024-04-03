@@ -85,7 +85,7 @@ Amazon S3
 
 ### Golang Benchmark
 
-在源码中提供了简单的元数据基准测试：[`pkg/meta/benchmarks_test.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/benchmarks_test.go)
+在源码中提供了简单的元数据基准测试：[`pkg/meta/benchmarks_test.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/benchmarks_test.go)
 
 ### JuiceFS Bench
 

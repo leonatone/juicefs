@@ -2,7 +2,7 @@
 // +build !noqingstore
 
 /*
- * JuiceFS, Copyright 2018 Juicedata, Inc.
+ * JuiceFS, Copyright 2018 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/qingstor/qingstor-sdk-go/v4/config"
 	"github.com/qingstor/qingstor-sdk-go/v4/request/errors"
 	qs "github.com/qingstor/qingstor-sdk-go/v4/service"

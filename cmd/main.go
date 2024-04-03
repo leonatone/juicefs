@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2020 Juicedata, Inc.
+ * JuiceFS, Copyright 2020 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ import (
 	"github.com/google/uuid"
 	"github.com/grafana/pyroscope-go"
 	_ "github.com/grafana/pyroscope-go/godeltaprof/http/pprof"
-	"github.com/juicedata/juicefs/pkg/utils"
-	"github.com/juicedata/juicefs/pkg/version"
+	"github.com/leonatone/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/version"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli/v2"
 	"go.uber.org/automaxprocs/maxprocs"

@@ -22,7 +22,7 @@ test_mount_process_exit_on_format()
     sleep 15   
     ps -ef | grep juicefs
     # TODO: fix the bug and remove the following line
-    # SEE https://github.com/juicedata/juicefs/issues/4534
+    # SEE https://github.com/leonatone/juicefs/issues/4534
     pidof juicefs && exit 1
     uuid=$(./juicefs status $META_URL | grep UUID | cut -d '"' -f 4) 
     ./juicefs destroy --force $META_URL $uuid

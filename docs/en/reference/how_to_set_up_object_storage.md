@@ -143,7 +143,7 @@ juicefs format \
 
 ## Supported object storage {#supported-object-storage}
 
-If you wish to use a storage system that is not listed, feel free to submit a requirement [issue](https://github.com/juicedata/juicefs/issues).
+If you wish to use a storage system that is not listed, feel free to submit a requirement [issue](https://github.com/leonatone/juicefs/issues).
 
 | Name                                                        | Value      |
 |:-----------------------------------------------------------:|:----------:|
@@ -845,7 +845,7 @@ juicefs format \
 
 [Gluster](https://github.com/gluster/glusterfs) is a software defined distributed storage that can scale to several petabytes. JuiceFS communicates with Gluster via the `libgfapi` library, so it needs to be built separately before used.
 
-First, install `libgfapi` (version 6.0 - 10.1, [10.4+ is not supported yet](https://github.com/juicedata/juicefs/issues/4043))
+First, install `libgfapi` (version 6.0 - 10.1, [10.4+ is not supported yet](https://github.com/leonatone/juicefs/issues/4043))
 
 <Tabs>
   <TabItem value="debian" label="Debian and derivatives">

@@ -127,4 +127,4 @@ JuiceFS 内置的 `gateway` 子命令不支持多用户管理等功能，只提�
 
 ### JuiceFS 目前有 SDK 可以使用吗？
 
-截止到 JuiceFS 1.0 发布，社区有两个 SDK，一个是 Juicedata 官方维护的 HDFS 接口高度兼容的 [Java SDK](deployment/hadoop_java_sdk.md)，另一个是由社区用户维护的 [Python SDK](https://github.com/megvii-research/juicefs-python)。
+截止到 JuiceFS 1.0 发布，社区有两个 SDK，一个是 leonatone 官方维护的 HDFS 接口高度兼容的 [Java SDK](deployment/hadoop_java_sdk.md)，另一个是由社区用户维护的 [Python SDK](https://github.com/megvii-research/juicefs-python)。

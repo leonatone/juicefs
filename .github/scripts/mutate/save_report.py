@@ -35,7 +35,7 @@ def save_report(job_name, report):
     github_job_url = os.environ.get('JOB_URL')
     print(f'github_job_url is: {github_job_url}')
     created_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    db = MySQLdb.connect(host="8.210.231.144", user="juicedata", passwd=passowrd, db="mutate")
+    db = MySQLdb.connect(host="8.210.231.144", user="leonatone", passwd=passowrd, db="mutate")
     c = db.cursor()
     c.execute(f"insert into report(github_repo, github_ref_name,  github_sha, github_run_id, github_job_url, created_date, job_name, passed, failed, compile_error, out_of_coverage, skip_by_comment, others) \
         values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (github_repo, github_ref_name, github_sha, github_run_id, github_job_url, created_date, job_name, report['passed'], report['failed'], report['compile_error'], report['out_of_coverage'], report['skip_by_comment'], report['others']))

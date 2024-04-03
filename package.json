@@ -1,9 +1,9 @@
 {
   "name": "juicefs",
   "version": "1.0.0",
-  "author": "Juicedata",
+  "author": "leonatone",
   "license": "Apache",
-  "repository": "github:juicedata/juicefs",
+  "repository": "github:leonatone/juicefs",
   "scripts": {
     "autocorrect-lint": "autocorrect --lint ./docs/ README*.md",
     "autocorrect-lint-fix": "autocorrect --fix ./docs/ README*.md",

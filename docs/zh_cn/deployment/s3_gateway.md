@@ -190,18 +190,18 @@ kubectl -n ${NAMESPACE} create secret generic juicefs-secret \
 - `access-key`：对象存储的 access key。更多信息参考[这篇文档](../reference/how_to_set_up_object_storage.md)。
 - `secret-key`：对象存储的 secret key。更多信息参考[这篇文档](../reference/how_to_set_up_object_storage.md)。
 
-然后下载 S3 网关[部署 YAML](https://github.com/juicedata/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) 并通过 `kubectl` 创建 `Deployment` 和 `Service` 资源。以下几点需要特别注意：
+然后下载 S3 网关[部署 YAML](https://github.com/leonatone/juicefs/blob/main/deploy/juicefs-s3-gateway.yaml) 并通过 `kubectl` 创建 `Deployment` 和 `Service` 资源。以下几点需要特别注意：
 
 - 请将以下命令的 `${NAMESPACE}` 替换为实际部署 S3 网关的 Kubernetes 名字空间，默认为 `kube-system`。
 - `Deployment` 的 `replicas` 默认为 1，请根据实际情况调整。
-- 默认使用 `juicedata/juicefs-csi-driver` 最新版镜像，其中已经集成了最新版 JuiceFS 客户端，具体集成的 JuiceFS 客户端版本请查看[这里](https://github.com/juicedata/juicefs-csi-driver/releases)。
+- 默认使用 `leonatone/juicefs-csi-driver` 最新版镜像，其中已经集成了最新版 JuiceFS 客户端，具体集成的 JuiceFS 客户端版本请查看[这里](https://github.com/leonatone/juicefs-csi-driver/releases)。
 - `Deployment` 的 `initContainers` 会先尝试格式化 JuiceFS 文件系统，如果你已经提前格式化完毕，这一步不会影响现有 JuiceFS 文件系统。
 - S3 网关默认监听的端口号为 9000
 - S3 网关[启动选项](../reference/command_reference.md#gateway)均为默认值，请根据实际需求调整。
 - `MINIO_ROOT_USER` 环境变量的值为 Secret 中的 `access-key`，`MINIO_ROOT_PASSWORD` 环境变量的值为 Secret 中的 `secret-key`。
 
 ```shell
-curl -sSL https://raw.githubusercontent.com/juicedata/juicefs/main/deploy/juicefs-s3-gateway.yaml | sed "s@kube-system@${NAMESPACE}@g" | kubectl apply -f -
+curl -sSL https://raw.githubusercontent.com/leonatone/juicefs/main/deploy/juicefs-s3-gateway.yaml | sed "s@kube-system@${NAMESPACE}@g" | kubectl apply -f -
 ```
 
 检查是否已经部署成功：
@@ -279,7 +279,7 @@ Ingress 的各个版本之间差异较大，更多使用方式请参考 [Ingress
    依次执行以下三条命令，通过 Helm 部署 JuiceFS S3 网关（注意以下示例是部署到 `kube-system` 名字空间）。
 
    ```sh
-   helm repo add juicefs-s3-gateway https://juicedata.github.io/charts/
+   helm repo add juicefs-s3-gateway https://leonatone.github.io/charts/
    helm repo update
    helm install juicefs-s3-gateway juicefs-s3-gateway/juicefs-s3-gateway -n kube-system -f ./values.yaml
    ```
@@ -308,18 +308,18 @@ Ingress 的各个版本之间差异较大，更多使用方式请参考 [Ingress
 
 ## 使用功能更完整的 S3 网关
 
-如果需要使用 MinIO S3 网关的一些高级功能，可以拉取[该仓库的 gateway 分支](https://github.com/juicedata/minio/tree/gateway)并自行编译 MinIO。该分支是基于 [MinIO RELEASE.2022-03-05T06-32-39Z](https://github.com/minio/minio/tree/RELEASE.2022-03-05T06-32-39Z) 版本开发，并添加了 JuiceFS 网关支持，支持在使用 JuiceFS 作为后端的同时使用 MinIO 网关的完整功能，比如[多用户管理](https://docs.min.io/docs/minio-multi-user-quickstart-guide.html)。
+如果需要使用 MinIO S3 网关的一些高级功能，可以拉取[该仓库的 gateway 分支](https://github.com/leonatone/minio/tree/gateway)并自行编译 MinIO。该分支是基于 [MinIO RELEASE.2022-03-05T06-32-39Z](https://github.com/minio/minio/tree/RELEASE.2022-03-05T06-32-39Z) 版本开发，并添加了 JuiceFS 网关支持，支持在使用 JuiceFS 作为后端的同时使用 MinIO 网关的完整功能，比如[多用户管理](https://docs.min.io/docs/minio-multi-user-quickstart-guide.html)。
 
 ### 编译
 
 :::tip 提示
-该分支依赖较新版本的 JuiceFS，具体的 JuiceFS 版本请查看 [`go.mod`](https://github.com/juicedata/minio/blob/gateway/go.mod) 文件。
+该分支依赖较新版本的 JuiceFS，具体的 JuiceFS 版本请查看 [`go.mod`](https://github.com/leonatone/minio/blob/gateway/go.mod) 文件。
 
 与[手动编译 JuiceFS 客户端](../getting-started/installation.md#install-the-pre-compiled-client)类似，你需要提前安装一些依赖才能正常编译 S3 网关。
 :::
 
 ```shell
-git clone -b gateway git@github.com:juicedata/minio.git && cd minio
+git clone -b gateway git@github.com:leonatone/minio.git && cd minio
 ```
 
 将会生成 MinIO 二进制文件

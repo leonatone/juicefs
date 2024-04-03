@@ -60,8 +60,8 @@ JuiceFS provides some dashboard templates for Grafana, which can be imported to 
 
 | Name                                                                                                            | Description                                                                                             |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [`grafana_template.json`](https://github.com/juicedata/juicefs/blob/main/docs/en/grafana_template.json)         | For show metrics collected from mount point, S3 gateway (non-Kubernetes deployment) and Hadoop Java SDK |
-| [`grafana_template_k8s.json`](https://github.com/juicedata/juicefs/blob/main/docs/en/grafana_template_k8s.json) | For show metrics collected from Kubernetes CSI Driver and S3 gateway (Kubernetes deployment)            |
+| [`grafana_template.json`](https://github.com/leonatone/juicefs/blob/main/docs/en/grafana_template.json)         | For show metrics collected from mount point, S3 gateway (non-Kubernetes deployment) and Hadoop Java SDK |
+| [`grafana_template_k8s.json`](https://github.com/leonatone/juicefs/blob/main/docs/en/grafana_template_k8s.json) | For show metrics collected from Kubernetes CSI Driver and S3 gateway (Kubernetes deployment)            |
 
 Our Grafana dashboard looks like this:
 

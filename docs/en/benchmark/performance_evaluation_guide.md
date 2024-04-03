@@ -42,11 +42,11 @@ juicefs bench /mnt/jfs -p 4
 
 The test results are presented in a table format, where `ITEM` represents the tested item, `VALUE` represents the processing capacity per second (throughput, number of files, number of operations, etc.), and `COST` represents the time required for each file or operation.
 
-The results will be displayed in green, yellow, or red to differentiate performance. If there are red indicators in your results, please check the relevant configurations first. Feel free to post any problems you encountered in detail on [GitHub Discussions](https://github.com/juicedata/juicefs/discussions).
+The results will be displayed in green, yellow, or red to differentiate performance. If there are red indicators in your results, please check the relevant configurations first. Feel free to post any problems you encountered in detail on [GitHub Discussions](https://github.com/leonatone/juicefs/discussions).
 
 ![bench](../images/bench-guide-bench.png)
 
-The detailed `juicefs bench` performance test flows are shown below (The logic behind is very simple. Please take a look at the [source code](https://github.com/juicedata/juicefs/blob/main/cmd/bench.go) if you are interested).
+The detailed `juicefs bench` performance test flows are shown below (The logic behind is very simple. Please take a look at the [source code](https://github.com/leonatone/juicefs/blob/main/cmd/bench.go) if you are interested).
 
 1. N concurrent `write`, each to a large file of 1 GiB with IO size of 1 MiB
 2. N concurrent `read`, each from the large file of 1 GiB previously written, with IO size of 1 MiB

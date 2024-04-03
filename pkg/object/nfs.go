@@ -2,7 +2,7 @@
 // +build !nonfs
 
 /*
- * JuiceFS, Copyright 2023 Juicedata, Inc.
+ * JuiceFS, Copyright 2023 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/juicedata/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/pkg/errors"
 	"github.com/vmware/go-nfs-client/nfs"
 	"github.com/vmware/go-nfs-client/nfs/rpc"

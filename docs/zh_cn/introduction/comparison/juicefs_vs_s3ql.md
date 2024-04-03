@@ -115,4 +115,4 @@ JuiceFS 只在创建文件系统时设置对象存储 API 访问密钥，相关�
 
 **S3QL** 采用对象存储 + SQLite 的存储结构，数据分块存储既能提高文件的读写效率，也能降低文件修改时的资源开销。贴心的提供了快照、数据去重、数据保持等高级功能，加之默认的数据压缩和数据加密，让 S3QL 非常适合个人在云存储上用较低的成本、更安全的存储文件。
 
-**JuiceFS** 支持对象存储、HDFS、WebDAV、本地磁盘作为数据存储引擎，支持 Redis、TiKV、MySQL、MariaDB、PostgreSQL、SQLite 等流行的数据作为元数据存储引擎。除了通过 FUSE 提供标准的 POSIX 文件系统接口以外，JuiceFS 还提供 Java API，可以直接替代 HDFS 为 Hadoop 提供存储。同时还提供 [Kubernetes CSI Driver](https://github.com/juicedata/juicefs-csi-driver)，可以作为 Kubernetes 的存储层做数据持久化存储。JuiceFS 是为企业级分布式数据存储场景设计的文件系统，广泛应用于大数据分析、机器学习、容器共享存储、数据共享及备份等多种场景。
+**JuiceFS** 支持对象存储、HDFS、WebDAV、本地磁盘作为数据存储引擎，支持 Redis、TiKV、MySQL、MariaDB、PostgreSQL、SQLite 等流行的数据作为元数据存储引擎。除了通过 FUSE 提供标准的 POSIX 文件系统接口以外，JuiceFS 还提供 Java API，可以直接替代 HDFS 为 Hadoop 提供存储。同时还提供 [Kubernetes CSI Driver](https://github.com/leonatone/juicefs-csi-driver)，可以作为 Kubernetes 的存储层做数据持久化存储。JuiceFS 是为企业级分布式数据存储场景设计的文件系统，广泛应用于大数据分析、机器学习、容器共享存储、数据共享及备份等多种场景。

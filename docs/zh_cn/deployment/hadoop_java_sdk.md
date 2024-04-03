@@ -69,7 +69,7 @@ JuiceFS Hadoop Java SDK 默认使用 JDK 8 编译，如果需要在高版本的 
 克隆仓库：
 
 ```shell
-git clone https://github.com/juicedata/juicefs.git
+git clone https://github.com/leonatone/juicefs.git
 ```
 
 进入目录，执行编译：

@@ -135,4 +135,4 @@ The built-in `gateway` subcommand of JuiceFS does not support functions such as 
 
 ### Is there currently an SDK available for JuiceFS?
 
-As of the release of JuiceFS 1.0, the community has two SDKs, one is the [Java SDK](deployment/hadoop_java_sdk.md) that is highly compatible with the HDFS interface officially maintained by Juicedata, and the other is the [Python SDK](https://github.com/megvii-research/juicefs-python) maintained by community users.
+As of the release of JuiceFS 1.0, the community has two SDKs, one is the [Java SDK](deployment/hadoop_java_sdk.md) that is highly compatible with the HDFS interface officially maintained by leonatone, and the other is the [Python SDK](https://github.com/megvii-research/juicefs-python) maintained by community users.

@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2021 Juicedata, Inc.
+ * JuiceFS, Copyright 2021 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ import (
 	"strings"
 
 	"github.com/dustin/go-humanize"
-	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/utils"
-	"github.com/juicedata/juicefs/pkg/version"
+	"github.com/leonatone/juicefs/pkg/meta"
+	"github.com/leonatone/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/version"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"
 )

@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2018 Juicedata, Inc.
+ * JuiceFS, Copyright 2018 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import (
 	"time"
 
 	"github.com/dustin/go-humanize"
-	"github.com/juicedata/juicefs/pkg/vfs"
+	"github.com/leonatone/juicefs/pkg/vfs"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli/v2"
 )

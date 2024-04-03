@@ -1,4 +1,4 @@
-module github.com/juicedata/juicefs
+module github.com/leonatone/juicefs
 
 go 1.20
 
@@ -35,8 +35,8 @@ require (
 	github.com/jackc/pgx/v5 v5.5.4
 	github.com/jcmturner/gokrb5/v8 v8.4.4
 	github.com/json-iterator/go v1.1.12
-	github.com/juicedata/godaemon v0.0.0-20210629045518-3da5144a127d
-	github.com/juicedata/gogfapi v0.0.0-20230626071140-fc28e5537825
+	github.com/leonatone/godaemon v0.0.0-20210629045518-3da5144a127d
+	github.com/leonatone/gogfapi v0.0.0-20230626071140-fc28e5537825
 	github.com/juju/ratelimit v1.0.2
 	github.com/ks3sdklib/aws-sdk-go v1.2.2
 	github.com/mattn/go-isatty v0.0.18
@@ -255,18 +255,18 @@ require (
 	xorm.io/builder v0.3.7 // indirect
 )
 
-replace github.com/minio/minio v0.0.0-20210206053228-97fe57bba92c => github.com/juicedata/minio v0.0.0-20231213085529-c243663574ba
+replace github.com/minio/minio v0.0.0-20210206053228-97fe57bba92c => github.com/leonatone/minio v0.0.0-20231213085529-c243663574ba
 
-replace github.com/hanwen/go-fuse/v2 v2.1.1-0.20210611132105-24a1dfe6b4f8 => github.com/juicedata/go-fuse/v2 v2.1.1-0.20240202080323-002ef792942e
+replace github.com/hanwen/go-fuse/v2 v2.1.1-0.20210611132105-24a1dfe6b4f8 => github.com/leonatone/go-fuse/v2 v2.1.1-0.20240202080323-002ef792942e
 
 replace github.com/dgrijalva/jwt-go v3.2.0+incompatible => github.com/golang-jwt/jwt v3.2.1+incompatible
 
-replace github.com/vbauerster/mpb/v7 v7.0.3 => github.com/juicedata/mpb/v7 v7.0.4-0.20231024073412-2b8d31be510b
+replace github.com/vbauerster/mpb/v7 v7.0.3 => github.com/leonatone/mpb/v7 v7.0.4-0.20231024073412-2b8d31be510b
 
 replace xorm.io/xorm v1.0.7 => gitea.com/davies/xorm v1.0.8-0.20220528043536-552d84d1b34a
 
-replace github.com/huaweicloud/huaweicloud-sdk-go-obs v3.21.12+incompatible => github.com/juicedata/huaweicloud-sdk-go-obs v3.22.12-0.20230228031208-386e87b5c091+incompatible
+replace github.com/huaweicloud/huaweicloud-sdk-go-obs v3.21.12+incompatible => github.com/leonatone/huaweicloud-sdk-go-obs v3.22.12-0.20230228031208-386e87b5c091+incompatible
 
-replace github.com/urfave/cli/v2 v2.19.3 => github.com/juicedata/cli/v2 v2.19.4-0.20230605075551-9c9c5c0dce83
+replace github.com/urfave/cli/v2 v2.19.3 => github.com/leonatone/cli/v2 v2.19.4-0.20230605075551-9c9c5c0dce83
 
-replace github.com/vmware/go-nfs-client v0.0.0-20190605212624-d43b92724c1b => github.com/juicedata/go-nfs-client v0.0.0-20231018052507-dbca444fa7e8
+replace github.com/vmware/go-nfs-client v0.0.0-20190605212624-d43b92724c1b => github.com/leonatone/go-nfs-client v0.0.0-20231018052507-dbca444fa7e8

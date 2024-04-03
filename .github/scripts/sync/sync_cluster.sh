@@ -24,23 +24,23 @@ start_minio(){
 }
 start_minio
 start_worker(){
-    if getent group juicedata ; then groupdel -f juicedata; echo delete juicedata group; fi
-    if getent passwd juicedata ; then rm -rf /home/juicedata && userdel -f juicedata; echo delete juicedata user; fi
-    groupadd juicedata && useradd -ms /bin/bash -g juicedata juicedata -u 1024
+    if getent group leonatone ; then groupdel -f leonatone; echo delete leonatone group; fi
+    if getent passwd leonatone ; then rm -rf /home/leonatone && userdel -f leonatone; echo delete leonatone user; fi
+    groupadd leonatone && useradd -ms /bin/bash -g leonatone leonatone -u 1024
     if [ "$CI" != "true" ] && [ -f ~/.ssh/id_rsa ]; then
         echo "ssh key already exists, don't overwrite it in non ci environment"
     else
         echo "generating ssh key with type $KEY_TYPE"
-        yes |sudo -u juicedata ssh-keygen -t $KEY_TYPE -C "default" -f /home/juicedata/.ssh/id_rsa -q -N ""
-        chmod 600 /home/juicedata/.ssh/id_rsa
+        yes |sudo -u leonatone ssh-keygen -t $KEY_TYPE -C "default" -f /home/leonatone/.ssh/id_rsa -q -N ""
+        chmod 600 /home/leonatone/.ssh/id_rsa
     fi
-    cp -f /home/juicedata/.ssh/id_rsa.pub .github/scripts/ssh/id_rsa.pub
-    docker build -t juicedata/ssh -f .github/scripts/ssh/Dockerfile .github/scripts/ssh
+    cp -f /home/leonatone/.ssh/id_rsa.pub .github/scripts/ssh/id_rsa.pub
+    docker build -t leonatone/ssh -f .github/scripts/ssh/Dockerfile .github/scripts/ssh
     docker rm worker1 worker2 -f
     docker compose -f .github/scripts/ssh/docker-compose.yml up -d
     sleep 3s
-    sudo -u juicedata ssh -o BatchMode=yes -o StrictHostKeyChecking=no juicedata@172.20.0.2 exit
-    sudo -u juicedata ssh -o BatchMode=yes -o StrictHostKeyChecking=no juicedata@172.20.0.3 exit
+    sudo -u leonatone ssh -o BatchMode=yes -o StrictHostKeyChecking=no leonatone@172.20.0.2 exit
+    sudo -u leonatone ssh -o BatchMode=yes -o StrictHostKeyChecking=no leonatone@172.20.0.3 exit
 }
 start_worker
 
@@ -59,8 +59,8 @@ test_sync_without_mount_point(){
     dd if=/dev/urandom of=/jfs/data/file$file_count bs=1M count=1024
     (./mc rb myminio/data1 > /dev/null 2>&1 --force || true) && ./mc mb myminio/data1
     
-    sudo -u juicedata meta_url=$META_URL ./juicefs sync -v jfs://meta_url/data/ minio://minioadmin:minioadmin@172.20.0.1:9000/data1/ \
-         --manager-addr 172.20.0.1:8081 --worker juicedata@172.20.0.2,juicedata@172.20.0.3 \
+    sudo -u leonatone meta_url=$META_URL ./juicefs sync -v jfs://meta_url/data/ minio://minioadmin:minioadmin@172.20.0.1:9000/data1/ \
+         --manager-addr 172.20.0.1:8081 --worker leonatone@172.20.0.2,leonatone@172.20.0.3 \
          --list-threads 10 --list-depth 5 \
          2>&1 | tee sync.log
     # diff data/ /jfs/data1/
@@ -81,8 +81,8 @@ test_sync_without_mount_point2(){
     ./mc cp -r data myminio/data
     
     # (./mc rb myminio/data1 > /dev/null 2>&1 --force || true) && ./mc mb myminio/data1
-    sudo -u juicedata meta_url=$META_URL ./juicefs sync -v  minio://minioadmin:minioadmin@172.20.0.1:9000/data/ jfs://meta_url/ \
-         --manager-addr 172.20.0.1:8081 --worker juicedata@172.20.0.2,juicedata@172.20.0.3 \
+    sudo -u leonatone meta_url=$META_URL ./juicefs sync -v  minio://minioadmin:minioadmin@172.20.0.1:9000/data/ jfs://meta_url/ \
+         --manager-addr 172.20.0.1:8081 --worker leonatone@172.20.0.2,leonatone@172.20.0.3 \
          --list-threads 10 --list-depth 5\
          2>&1 | tee sync.log
     check_sync_log $file_count
@@ -101,9 +101,9 @@ skip_test_sync_between_oss(){
         dd if=/dev/urandom of=/jfs/file$i bs=1M count=1 status=none
     done
     start_gateway
-    sudo -u juicedata ./juicefs sync -v minio://minioadmin:minioadmin@172.20.0.1:9005/myjfs/ \
+    sudo -u leonatone ./juicefs sync -v minio://minioadmin:minioadmin@172.20.0.1:9005/myjfs/ \
          minio://minioadmin:minioadmin@172.20.0.1:9000/myjfs/ \
-        --manager-addr 172.20.0.1:8081 --worker juicedata@172.20.0.2,juicedata@172.20.0.3 \
+        --manager-addr 172.20.0.1:8081 --worker leonatone@172.20.0.2,leonatone@172.20.0.3 \
         --list-threads 10 --list-depth 5 \
         2>&1 | tee sync.log
     count1=$(./mc ls myminio/myjfs/test -r | wc -l)

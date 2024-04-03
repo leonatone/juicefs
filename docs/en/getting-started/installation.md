@@ -24,7 +24,7 @@ curl -sSL https://d.juicefs.com/install | sh -s /tmp
 
 ## Install the pre-compiled client {#install-the-pre-compiled-client}
 
-You can download the latest version of the client at [GitHub](https://github.com/juicedata/juicefs/releases). Pre-compiled versions for different CPU architectures and operating systems are available in the download list of each client version. Please select the version that best suits your application. For example:
+You can download the latest version of the client at [GitHub](https://github.com/leonatone/juicefs/releases). Pre-compiled versions for different CPU architectures and operating systems are available in the download list of each client version. Please select the version that best suits your application. For example:
 
 | File Name                            | Description                                                                                  |
 |--------------------------------------|----------------------------------------------------------------------------------------------|
@@ -42,13 +42,13 @@ For Linux systems with x86 architecture, download the file with the file name `l
 1. Get the latest version number:
 
    ```shell
-   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+   JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
    ```
 
 2. Download the client to the current directory:
 
    ```shell
-   wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+   wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
    ```
 
 3. Unzip the installation package:
@@ -86,7 +86,7 @@ sudo apt-get install juicefs
 
 #### Fedora Copr
 
-JuiceFS also provides a [Copr](https://copr.fedorainfracloud.org/coprs/juicedata/juicefs) repository, which allows for easy installation of the latest version of the client on Red Hat and its derivatives. The supported systems currently include:
+JuiceFS also provides a [Copr](https://copr.fedorainfracloud.org/coprs/leonatone/juicefs) repository, which allows for easy installation of the latest version of the client on Red Hat and its derivatives. The supported systems currently include:
 
 - **Amazonlinux 2023**
 - **CentOS 8, 9**
@@ -97,14 +97,14 @@ Taking Fedora 38 as an example, execute the following commands to install the cl
 
 ```shell
 # Enable the Copr repository
-sudo dnf copr enable -y juicedata/juicefs
+sudo dnf copr enable -y leonatone/juicefs
 # Install the client
 sudo dnf install juicefs
 ```
 
 #### Snapcraft
 
-We have also packaged and released the [Snap version of the JuiceFS client](https://github.com/juicedata/juicefs-snapcraft) on the [Canonical Snapcraft](https://snapcraft.io) platform. For Ubuntu 16.04 and above and other operating systems that support Snap, you can install it using the following commands:
+We have also packaged and released the [Snap version of the JuiceFS client](https://github.com/leonatone/juicefs-snapcraft) on the [Canonical Snapcraft](https://snapcraft.io) platform. For Ubuntu 16.04 and above and other operating systems that support Snap, you can install it using the following commands:
 
 ```shell
 sudo snap install juicefs
@@ -238,8 +238,8 @@ RUN apt update && apt install -y curl fuse && \
 RUN set -x && \
     mkdir /juicefs && \
     cd /juicefs && \
-    JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v') && \
-    curl -s -L "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz" \
+    JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v') && \
+    curl -s -L "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz" \
     | tar -zx && \
     install juicefs /usr/bin && \
     cd .. && \
@@ -268,7 +268,7 @@ Compiling clients for Linux, macOS, BSD and other Unix-like systems requires the
 1. Clone the source code:
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git
+   git clone https://github.com/leonatone/juicefs.git
    ```
 
 2. Enter the source code directory:
@@ -312,7 +312,7 @@ On the [MinGW-w64 download page](https://www.mingw-w64.org/downloads), select a 
 1. Clone and enter the project directory:
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git && cd juicefs
+   git clone https://github.com/leonatone/juicefs.git && cd juicefs
    ```
 
 2. Copy WinFsp headers:
@@ -368,7 +368,7 @@ The compiled client is a binary file named `juicefs.exe`, located in the current
 1. Clone and enter the project directory:
 
    ```shell
-   git clone https://github.com/juicedata/juicefs.git && cd juicefs
+   git clone https://github.com/leonatone/juicefs.git && cd juicefs
    ```
 
 2. Install dependencies:

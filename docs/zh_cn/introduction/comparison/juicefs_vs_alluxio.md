@@ -111,7 +111,7 @@ Alluxio 也支持大部分 S3 API，详见[文档](https://docs.alluxio.io/os/us
 
 二者均提供 Kubernetes CSI 驱动：
 
-* [JuiceFS CSI Driver](/docs/zh/csi/introduction) 由 Juicedata 团队持续维护
+* [JuiceFS CSI Driver](/docs/zh/csi/introduction) 由 leonatone 团队持续维护
 * [Alluxio CSI Driver](https://github.com/Alluxio/alluxio/tree/master-2.x/integration/docker/csi) 由 Alluxio 团队持续维护，相对来说迭代速度较慢。
 
 ### WebDAV

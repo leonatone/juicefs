@@ -176,7 +176,7 @@ test_user_sts()
     ./mc admin user add gateway1 user1 admin123
     ./mc admin policy set gateway1 consoleAdmin user=user1
     ./mc alias set gateway1_user1 http://127.0.0.1:9001 user1 admin123
-    git clone https://github.com/juicedata/minio.git -b gateway-1.1
+    git clone https://github.com/leonatone/minio.git -b gateway-1.1
     ./mc mb gateway1_user1/test1
     ./mc cp mc gateway1_user1/test1/mc
     cd minio

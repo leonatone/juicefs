@@ -44,7 +44,7 @@ JuiceFS is [HDFS-compatible](../../deployment/hadoop_java_sdk.md), supporting no
 
 ## Kubernetes CSI Driver
 
-JuiceFS provides [Kubernetes CSI Driver](https://github.com/juicedata/juicefs-csi-driver) for easy integration with Kubernetes environments. While Alluxio also offers [Kubernetes CSI Driver](https://github.com/Alluxio/alluxio-csi), it seems to have limited activity and lacks official support from Alluxio.
+JuiceFS provides [Kubernetes CSI Driver](https://github.com/leonatone/juicefs-csi-driver) for easy integration with Kubernetes environments. While Alluxio also offers [Kubernetes CSI Driver](https://github.com/Alluxio/alluxio-csi), it seems to have limited activity and lacks official support from Alluxio.
 
 ## Fully POSIX-compatible
 

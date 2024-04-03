@@ -58,7 +58,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
     
     def test_sync8(self):
-        # SEE: https://github.com/juicedata/juicefs/issues/4471
+        # SEE: https://github.com/leonatone/juicefs/issues/4471
         state = SyncMachine()
         v1 = state.init_folders()
         v2 = state.mkdir(mode=8, parent=v1, subdir='a', umask=0)
@@ -66,7 +66,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_sync9(self):
-        # SEE: https://github.com/juicedata/juicefs/issues/4471
+        # SEE: https://github.com/leonatone/juicefs/issues/4471
         state = SyncMachine()
         v1 = state.init_folders()
         v2 = state.mkdir(mode=8, parent=v1, subdir='aa', umask=0) 

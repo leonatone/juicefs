@@ -5,7 +5,7 @@ ARG GOPROXY
 ARG GITHUB_REF
 # 4ac69613b5919142d87f21a64ca744ae537192d6
 ARG GITHUB_SHA
-ARG JUICEFS_REPO_URL=https://github.com/juicedata/juicefs
+ARG JUICEFS_REPO_URL=https://github.com/leonatone/juicefs
 
 WORKDIR /workspace
 ENV GOPROXY=${GOPROXY:-https://proxy.golang.org}
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y musl-tools upx-ucl && \
     git checkout $GITHUB_REF && \
     make juicefs
 
-FROM juicedata/juicefs-csi-driver:nightly
+FROM leonatone/juicefs-csi-driver:nightly
 
 WORKDIR /app
 COPY --from=builder /workspace/juicefs/juicefs /usr/local/bin/

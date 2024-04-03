@@ -86,7 +86,7 @@ The meaning of each column is:
 - `2021.01.15 08:26:11.003330`: The time of the current operation
 - `[uid:0,gid:0,pid:4403]`: User ID, group ID, process ID of the current operation
 - `write`: Operation type
-- `(17669,8666,4993160)`: The input parameters of the current operation type. For example, the input parameters of the `write` operation in the example are the inode of the written file, the size of the written data, and the offset of the written file. Different operation types have different parameters. For details, please refer to the [`vfs.go`](https://github.com/juicedata/juicefs/blob/main/pkg/vfs/vfs.go) file.
+- `(17669,8666,4993160)`: The input parameters of the current operation type. For example, the input parameters of the `write` operation in the example are the inode of the written file, the size of the written data, and the offset of the written file. Different operation types have different parameters. For details, please refer to the [`vfs.go`](https://github.com/leonatone/juicefs/blob/main/pkg/vfs/vfs.go) file.
 - `OK`: Indicate the current operation is successful or not. If it is unsuccessful, specific failure information will be output.
 - `<0.000010>`: The time (in seconds) that the current operation takes.
 

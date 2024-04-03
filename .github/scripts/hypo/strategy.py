@@ -18,7 +18,7 @@ MAX_FALLOCATE_LENGTH=1024*128
 st_entry_name = st.text(alphabet=ascii_lowercase, min_size=MIN_FILE_NAME, max_size=MAX_FILE_NAME)
 # st_entry_name = st.text(min_size=MIN_FILE_NAME, max_size=MAX_FILE_NAME)
 st_content = st.binary(min_size=0, max_size=MAX_FILE_SIZE)
-#TODO: remove filter when bugfix https://github.com/juicedata/jfs/issues/776
+#TODO: remove filter when bugfix https://github.com/leonatone/jfs/issues/776
 st_xattr_name = st.text(st.characters(), min_size=1, max_size=MAX_XATTR_NAME).filter(lambda x: '\x00' not in x)
 st_xattr_value = st.binary(min_size=1, max_size=MAX_XATTR_VALUE)
 st_umask = st.integers(min_value=0o000, max_value=0o777)

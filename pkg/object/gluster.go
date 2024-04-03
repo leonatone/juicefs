@@ -2,7 +2,7 @@
 // +build gluster
 
 /*
- * JuiceFS, Copyright 2023 Juicedata, Inc.
+ * JuiceFS, Copyright 2023 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/juicedata/gogfapi/gfapi"
+	"github.com/leonatone/gogfapi/gfapi"
 )
 
 type gluster struct {

@@ -14,7 +14,7 @@ on:
 jobs:
   fio_benchmark:
     timeout-minutes: 30
-    if: github.repository == 'juicedata/juicefs'
+    if: github.repository == 'leonatone/juicefs'
     runs-on: [ubuntu-20.04]
 
     strategy:
@@ -58,7 +58,7 @@ jobs:
       - name: Download juicefs bin
         id: download
         run: |
-          latest_url=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep browser_download_url | grep linux-amd64.tar.gz | awk -F\" '{print $4}' )
+          latest_url=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep browser_download_url | grep linux-amd64.tar.gz | awk -F\" '{print $4}' )
           echo latest_url is $latest_url
           echo "latest_url=$latest_url" >> $GITHUB_OUTPUT
           urls=("juicefs"  $latest_url)
@@ -175,7 +175,7 @@ jobs:
             fi
             meta=`echo $meta_url | awk -F: '{print $1}'`
             hostname | grep bench  && runner="self_runner" || runner='github_runner'
-            mysql -h 8.210.231.144 -u juicedata -p${{secrets.MYSQL_PASSWORD_FOR_JUICEDATA}} -e "use  test_result;  INSERT INTO fio_test (name, bandwidth,  juicefs_version, size, nrfiles, ref_name, created_date, github_revision, workflow_url, meta_engine, storage, runner) values ('$name', $bw, '$juicefs_version', '1G', 10000, '${{ github.ref_name }}', '$(date +"%Y-%m-%d %H:%M:%S")', '${{github.sha}}', 'https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}',  '$meta', '${{inputs.storage}}', '$runner'); "
+            mysql -h 8.210.231.144 -u leonatone -p${{secrets.MYSQL_PASSWORD_FOR_leonatone}} -e "use  test_result;  INSERT INTO fio_test (name, bandwidth,  juicefs_version, size, nrfiles, ref_name, created_date, github_revision, workflow_url, meta_engine, storage, runner) values ('$name', $bw, '$juicefs_version', '1G', 10000, '${{ github.ref_name }}', '$(date +"%Y-%m-%d %H:%M:%S")', '${{github.sha}}', 'https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}',  '$meta', '${{inputs.storage}}', '$runner'); "
             ./$bin_name umount -f $mount_point
             uuid=$(./juicefs status $meta_url | grep UUID | cut -d '"' -f 4)
             if [ -n "$uuid" ];then
@@ -208,7 +208,7 @@ jobs:
 
       - name: Send Slack Notification
         if: failure() && github.event_name != 'workflow_dispatch'
-        uses: juicedata/slack-notify-action@main
+        uses: leonatone/slack-notify-action@main
         with:
           channel-id: "${{ secrets.SLACK_CHANNEL_ID_FOR_PR_CHECK_NOTIFY }}"
           slack_bot_token: "${{ secrets.SLACK_BOT_TOKEN }}"

@@ -36,7 +36,7 @@ In addition, you also need to create `Spaces access keys` in the API menu, which
 
 ### 3. Database
 
-Unlike normal file systems, JuiceFS stores all metadata corresponding to the data in a separate database, and the larger the size of the stored data, the better the performance. Currently, JuiceFS supports common databases such as Redis, TiKV, MySQL/MariaDB, PostgreSQL, SQLite, etc., while support for other databases is under continuous development. If the database you need is not supported at the moment, please submit [issue](https://github.com/juicedata/juicefs/issues) feedback.
+Unlike normal file systems, JuiceFS stores all metadata corresponding to the data in a separate database, and the larger the size of the stored data, the better the performance. Currently, JuiceFS supports common databases such as Redis, TiKV, MySQL/MariaDB, PostgreSQL, SQLite, etc., while support for other databases is under continuous development. If the database you need is not supported at the moment, please submit [issue](https://github.com/leonatone/juicefs/issues) feedback.
 
 Each database has its own advantages and disadvantages in terms of performance, size and reliability, and you should choose according to the actual needs of the scenario.
 
@@ -65,13 +65,13 @@ We currently using Ubuntu Server 20.04, execute the following commands in sequen
 Check current system and set temporary environment variable:
 
 ```shell
-JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/juicedata/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
+JFS_LATEST_TAG=$(curl -s https://api.github.com/repos/leonatone/juicefs/releases/latest | grep 'tag_name' | cut -d '"' -f 4 | tr -d 'v')
 ```
 
 Download the latest version of the client software package adapted to the current system:
 
 ```shell
-wget "https://github.com/juicedata/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
+wget "https://github.com/leonatone/juicefs/releases/download/v${JFS_LATEST_TAG}/juicefs-${JFS_LATEST_TAG}-linux-amd64.tar.gz"
 ```
 
 Unzip the installation package:
@@ -131,7 +131,7 @@ COPYRIGHT:
    Apache License 2.0
 ```
 
-In addition, you can also visit the [JuiceFS GitHub Releases](https://github.com/juicedata/juicefs/releases) page to select other versions for manual installation.
+In addition, you can also visit the [JuiceFS GitHub Releases](https://github.com/leonatone/juicefs/releases) page to select other versions for manual installation.
 
 ### 2. Create a file system
 

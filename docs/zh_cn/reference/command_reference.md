@@ -69,7 +69,7 @@ COPYRIGHT:
 
 ## 自动补全 {#auto-completion}
 
-通过加载 [`hack/autocomplete`](https://github.com/juicedata/juicefs/tree/main/hack/autocomplete) 目录下的对应脚本可以启用命令的自动补全，例如：
+通过加载 [`hack/autocomplete`](https://github.com/leonatone/juicefs/tree/main/hack/autocomplete) 目录下的对应脚本可以启用命令的自动补全，例如：
 
 <Tabs groupId="juicefs-cli-autocomplete">
   <TabItem value="bash" label="Bash">
@@ -295,7 +295,7 @@ juicefs destroy redis://localhost e94d66a8-2339-4abd-b8d8-6812df737892
 
 ### `juicefs gc` {#gc}
 
-如果对象存储块因为某种原因，完全脱离了 JuiceFS 的管理，也就是对象存储上依然还存在，但在 JuiceFS 元数据已经不复存在，无法被回收释放，这种现象称作「对象泄漏」。如果你并没有进行任何特殊操作，那么对象泄露通常昭示着 bug，建议提交 [GitHub Issue](https://github.com/juicedata/juicefs/issues/new/choose)。
+如果对象存储块因为某种原因，完全脱离了 JuiceFS 的管理，也就是对象存储上依然还存在，但在 JuiceFS 元数据已经不复存在，无法被回收释放，这种现象称作「对象泄漏」。如果你并没有进行任何特殊操作，那么对象泄露通常昭示着 bug，建议提交 [GitHub Issue](https://github.com/leonatone/juicefs/issues/new/choose)。
 
 与此同时，你可以用该命令清理泄漏对象。顺带一提，该命令还能够清理失效的文件碎片。详见[「状态检查 & 维护」](../administration/status_check_and_maintenance.md#gc)。
 
@@ -635,7 +635,7 @@ juicefs mount redis://localhost /mnt/jfs --backup-meta 0
 |`--backup-skip-trash` <VersionAdd>1.2</VersionAdd>|备份元数据时跳过回收站中的文件和目录。|
 |`--heartbeat=12`|发送心跳的间隔（单位秒），建议所有客户端使用相同的心跳值 (默认：12)|
 |`--read-only`|启用只读模式挂载。|
-|`--no-bgjob`|禁用后台任务，默认为 false，也就是说客户端会默认运行后台任务。后台任务包含：<br/><ul><li>清理回收站中过期的文件（在 [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go) 中搜索 `cleanupDeletedFiles` 和 `cleanupTrash`）</li><li>清理引用计数为 0 的 Slice（在 [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go) 中搜索 `cleanupSlices`）</li><li>清理过期的客户端会话（在 [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/base.go) 中搜索 `CleanStaleSessions`）</li></ul>特别地，与[企业版](https://juicefs.com/docs/zh/cloud/guide/background-job)不同，社区版碎片合并（Compaction）不受该选项的影响，而是随着文件读写操作，自动判断是否需要合并，然后异步执行（以 Redis 为例，在 [`pkg/meta/base.go`](https://github.com/juicedata/juicefs/blob/main/pkg/meta/redis.go) 中搜索 `compactChunk`）|
+|`--no-bgjob`|禁用后台任务，默认为 false，也就是说客户端会默认运行后台任务。后台任务包含：<br/><ul><li>清理回收站中过期的文件（在 [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go) 中搜索 `cleanupDeletedFiles` 和 `cleanupTrash`）</li><li>清理引用计数为 0 的 Slice（在 [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go) 中搜索 `cleanupSlices`）</li><li>清理过期的客户端会话（在 [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/base.go) 中搜索 `CleanStaleSessions`）</li></ul>特别地，与[企业版](https://juicefs.com/docs/zh/cloud/guide/background-job)不同，社区版碎片合并（Compaction）不受该选项的影响，而是随着文件读写操作，自动判断是否需要合并，然后异步执行（以 Redis 为例，在 [`pkg/meta/base.go`](https://github.com/leonatone/juicefs/blob/main/pkg/meta/redis.go) 中搜索 `compactChunk`）|
 |`--atime-mode=noatime` <VersionAdd>1.1</VersionAdd>|控制如何更新 atime（文件最后被访问的时间）。支持以下模式：<br/><ul><li>`noatime`（默认）：仅在文件创建和主动调用 `SetAttr` 时设置，平时访问与修改文件不影响 atime 值。考虑到更新 atime 需要运行额外的事务，对性能有影响，因此默认关闭。</li><li>`relatime`：仅在 mtime（文件内容修改时间）或 ctime（文件元数据修改时间）比 atime 新，或者 atime 超过 24 小时没有更新时进行更新。</li><li>`strictatime`：持续更新 atime</li></ul>|
 |`--skip-dir-nlink value` <VersionAdd>1.1</VersionAdd>|跳过更新目录 nlink 前的重试次数 (仅用于 TKV, 0 代表永不跳过) (默认：20)|
 

@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2020 Juicedata, Inc.
+ * JuiceFS, Copyright 2020 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,8 +36,8 @@ import (
 
 	"xorm.io/xorm"
 
-	aclAPI "github.com/juicedata/juicefs/pkg/acl"
-	"github.com/juicedata/juicefs/pkg/utils"
+	aclAPI "github.com/leonatone/juicefs/pkg/acl"
+	"github.com/leonatone/juicefs/pkg/utils"
 	"github.com/redis/go-redis/v9"
 	"github.com/stretchr/testify/assert"
 )

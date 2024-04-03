@@ -1,5 +1,5 @@
 /*
- * JuiceFS, Copyright 2021 Juicedata, Inc.
+ * JuiceFS, Copyright 2021 leonatone, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"github.com/juicedata/juicefs/pkg/version"
-	"github.com/stretchr/testify/assert"
 	"io"
 	"net/http"
 	"net/url"
@@ -31,10 +29,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/leonatone/juicefs/pkg/version"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/agiledragon/gomonkey/v2"
-	"github.com/juicedata/juicefs/pkg/meta"
-	"github.com/juicedata/juicefs/pkg/utils"
-	"github.com/juicedata/juicefs/pkg/vfs"
+	"github.com/leonatone/juicefs/pkg/meta"
+	"github.com/leonatone/juicefs/pkg/utils"
+	"github.com/leonatone/juicefs/pkg/vfs"
 	"github.com/redis/go-redis/v9"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/urfave/cli/v2"

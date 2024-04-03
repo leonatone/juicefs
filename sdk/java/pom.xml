@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.juicefs</groupId>
 	<name>juicefs-hadoop</name>
-	<url>https://github.com/juicedata/juicefs</url>
+	<url>https://github.com/leonatone/juicefs</url>
 	<description>Hadoop FileSystem implementation for JuiceFS</description>
 	<artifactId>juicefs-hadoop</artifactId>
 	<version>1.2-dev</version>
@@ -15,8 +15,8 @@
 
 	<developers>
 		<developer>
-			<name>Juicedata</name>
-			<email>team@juicedata.io</email>
+			<name>leonatone</name>
+			<email>team@leonatone.io</email>
 		</developer>
 	</developers>
 
@@ -29,9 +29,9 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/juicedata/juicefs</url>
-		<connection>https://github.com/juicedata/juicefs</connection>
-		<developerConnection>scm:git:https://github.com/juicedata/juicefs</developerConnection>
+		<url>https://github.com/leonatone/juicefs</url>
+		<connection>https://github.com/leonatone/juicefs</connection>
+		<developerConnection>scm:git:https://github.com/leonatone/juicefs</developerConnection>
 	</scm>
 
 	<build>

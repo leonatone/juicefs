@@ -4,7 +4,7 @@ all: juicefs
 
 REVISION := $(shell git rev-parse --short HEAD 2>/dev/null)
 REVISIONDATE := $(shell git log -1 --pretty=format:'%cd' --date short 2>/dev/null)
-PKG := github.com/juicedata/juicefs/pkg/version
+PKG := github.com/leonatone/juicefs/pkg/version
 LDFLAGS = -s -w
 ifneq ($(strip $(REVISION)),) # Use git clone
 	LDFLAGS += -X $(PKG).revision=$(REVISION) \
@@ -60,10 +60,10 @@ snapshot:
 		-e REVISIONDATE=$(REVISIONDATE) \
 		-e PRIVATE_KEY=${PRIVATE_KEY} \
 		-v ~/go/pkg/mod:/go/pkg/mod \
-		-v `pwd`:/go/src/github.com/juicedata/juicefs \
+		-v `pwd`:/go/src/github.com/leonatone/juicefs \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-w /go/src/github.com/juicedata/juicefs \
-		juicedata/golang-cross:latest release --snapshot --rm-dist --skip-publish
+		-w /go/src/github.com/leonatone/juicefs \
+		leonatone/golang-cross:latest release --snapshot --rm-dist --skip-publish
 
 release:
 	docker run --rm --privileged \
@@ -71,10 +71,10 @@ release:
 		-e PRIVATE_KEY=${PRIVATE_KEY} \
 		--env-file .release-env \
 		-v ~/go/pkg/mod:/go/pkg/mod \
-		-v `pwd`:/go/src/github.com/juicedata/juicefs \
+		-v `pwd`:/go/src/github.com/leonatone/juicefs \
 		-v /var/run/docker.sock:/var/run/docker.sock \
-		-w /go/src/github.com/juicedata/juicefs \
-		juicedata/golang-cross:latest release --rm-dist
+		-w /go/src/github.com/leonatone/juicefs \
+		leonatone/golang-cross:latest release --rm-dist
 
 test.meta.core:
 	SKIP_NON_CORE=true go test -v -cover -count=1  -failfast -timeout=12m ./pkg/meta/... -coverprofile=cov.out

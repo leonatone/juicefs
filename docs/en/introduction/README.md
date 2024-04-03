@@ -5,7 +5,7 @@ slug: .
 pagination_next: introduction/architecture
 ---
 
-[**JuiceFS**](https://github.com/juicedata/juicefs) is an open-source, high-performance distributed file system designed for the cloud, released under the Apache License 2.0. By providing full [POSIX](https://en.wikipedia.org/wiki/POSIX) compatibility, it allows almost all kinds of object storage to be used as massive local disks and to be mounted and accessed on different hosts across platforms and regions.
+[**JuiceFS**](https://github.com/leonatone/juicefs) is an open-source, high-performance distributed file system designed for the cloud, released under the Apache License 2.0. By providing full [POSIX](https://en.wikipedia.org/wiki/POSIX) compatibility, it allows almost all kinds of object storage to be used as massive local disks and to be mounted and accessed on different hosts across platforms and regions.
 
 JuiceFS separates "data" and "metadata" storage. Files are split into chunks and stored in [object storage](../reference/how_to_set_up_object_storage.md#supported-object-storage) like Amazon S3. The corresponding metadata can be stored in various [databases](../reference/how_to_set_up_metadata_engine.md) such as Redis, MySQL, TiKV, and SQLite, based on the scenarios and requirements.
 
@@ -36,7 +36,7 @@ JuiceFS is designed for massive data storage and can be used as an alternative t
 
 ## Data privacy
 
-JuiceFS is an open-source software available on [GitHub](https://github.com/juicedata/juicefs). When using JuiceFS to store data, the data is split into chunks according to specific rules and stored in custom object storage or other storage media, and the corresponding metadata is stored in a custom database.
+JuiceFS is an open-source software available on [GitHub](https://github.com/leonatone/juicefs). When using JuiceFS to store data, the data is split into chunks according to specific rules and stored in custom object storage or other storage media, and the corresponding metadata is stored in a custom database.
 
 ## More info
 

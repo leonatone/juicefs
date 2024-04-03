@@ -3,7 +3,7 @@ from fsrand2 import JuicefsMachine
 
 class TestFsrand2(unittest.TestCase):
     def test_acl_913(self):
-        # See: https://github.com/juicedata/jfs/issues/913
+        # See: https://github.com/leonatone/jfs/issues/913
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'', file_name='aaaa', mode='w', parent=v1, user='root')
@@ -13,7 +13,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1004(self):
-        # SEE https://github.com/juicedata/jfs/issues/1004
+        # SEE https://github.com/leonatone/jfs/issues/1004
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.listdir(dir=v1, user='root')
@@ -23,7 +23,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1006(self):
-        # SEE https://github.com/juicedata/jfs/issues/1006
+        # SEE https://github.com/leonatone/jfs/issues/1006
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.create_file(content=b'', file_name='aaaa', mode='w', parent=v1, umask=0, user='root')
@@ -33,7 +33,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1011(self):
-        # SEE https://github.com/juicedata/jfs/issues/1011
+        # SEE https://github.com/leonatone/jfs/issues/1011
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.chmod(entry=v1, mode=0, user='root')
@@ -45,7 +45,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1015(self):
-        # SEE: https://github.com/juicedata/jfs/issues/1015
+        # SEE: https://github.com/leonatone/jfs/issues/1015
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'', file_name='aaaa', mode='w', parent=v1, umask=0, user='root')
@@ -54,7 +54,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1022(self):
-        # SEE https://github.com/juicedata/jfs/issues/1022
+        # SEE https://github.com/leonatone/jfs/issues/1022
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.create_file(content=b'\xda\x07', file_name='lbca', mode='w', parent=v1, umask=103, user='root')
@@ -64,7 +64,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_1044(self):
-        # SEE: https://github.com/juicedata/jfs/issues/1044
+        # SEE: https://github.com/leonatone/jfs/issues/1044
         state = JuicefsMachine()
         v1 = state.init_folders()
         v3 = state.create_file(content=b'', file_name='aaca', mode='w', parent=v1, umask=0, user='root')
@@ -75,7 +75,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_4458(self):
-        # SEE: https://github.com/juicedata/juicefs/issues/4458
+        # SEE: https://github.com/leonatone/juicefs/issues/4458
         state = JuicefsMachine()
         v1 = state.init_folders()
         v3 = state.set_acl(default=True, entry=v1, group='root', group_perm=set(), logical=False, mask=set(), not_recalc_mask=False, other_perm=set(), physical=False, recalc_mask=True, recursive=True, set_mask=True, sudo_user='root', user='user1', user_perm={v1, 'r', 'w', 'x'})
@@ -83,7 +83,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_4472(self):
-        # SEE: https://github.com/juicedata/juicefs/issues/4472
+        # SEE: https://github.com/leonatone/juicefs/issues/4472
         state = JuicefsMachine()
         v1 = state.init_folders()
         v2 = state.create_file(content=b'', file_name='stsn', mode='x', parent=v1, umask=464, user='root')
@@ -94,7 +94,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_4483(self):
-        # SEE https://github.com/juicedata/juicefs/issues/4483
+        # SEE https://github.com/leonatone/juicefs/issues/4483
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.set_acl(default=True, entry=v1, group='root', group_perm={'r'}, logical=True, mask={'r'}, not_recalc_mask=False, other_perm={'r', 'x'}, physical=False, recalc_mask=False, recursive=True, set_mask=True, sudo_user='user1', user='user2', user_perm={'r', 'w', 'x'})
@@ -104,7 +104,7 @@ class TestFsrand2(unittest.TestCase):
         state.teardown()
 
     def test_acl_4496(self):
-        # SEE https://github.com/juicedata/juicefs/issues/4496
+        # SEE https://github.com/leonatone/juicefs/issues/4496
         state = JuicefsMachine()
         v1 = state.init_folders()
         state.chmod(entry=v1, mode=3291, user='root')

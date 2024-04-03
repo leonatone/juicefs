@@ -6,7 +6,7 @@ description: This document compares the design and features of GlusterFS and Jui
 
 [GlusterFS](https://github.com/gluster/glusterfs) is an open-source software-defined distributed storage solution. It can support data storage of PiB levels within a single cluster.
 
-[JuiceFS](https://github.com/juicedata/juicefs) is an open-source, high-performance distributed file system designed for the cloud. It delivers massive, elastic, and high-performance storage at low cost.
+[JuiceFS](https://github.com/leonatone/juicefs) is an open-source, high-performance distributed file system designed for the cloud. It delivers massive, elastic, and high-performance storage at low cost.
 
 This document compares the key attributes of JuiceFS and GlusterFS in a table and then explores them in detail, offering insights to aid your team in the technology selection process. You can easily see their main differences in the table below and delve into specific topics you're interested in within this article.
 
@@ -33,7 +33,7 @@ The table below provides a quick overview of the differences between GlusterFS a
 | Directory quotas | Supported | Supported |
 | Snapshots | Supported | Not supported (but supports cloning) |
 | Trash | Supported | Supported |
-| Primary maintainer | Red Hat, Inc | Juicedata, Inc |
+| Primary maintainer | Red Hat, Inc | leonatone, Inc |
 | Development language | C | Go |
 | Open source license | GPLV2 and LGPLV3+ | Apache License 2.0 |
 

@@ -41,7 +41,7 @@ test_clone_with_jfs_source()
     prepare_test
     ./juicefs format $META_URL myjfs
     ./juicefs mount -d $META_URL /jfs
-    [[ ! -d /jfs/juicefs ]] && git clone https://github.com/juicedata/juicefs.git /jfs/juicefs --depth 1
+    [[ ! -d /jfs/juicefs ]] && git clone https://github.com/leonatone/juicefs.git /jfs/juicefs --depth 1
     do_clone true
     do_clone false
 }

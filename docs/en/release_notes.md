@@ -1,7 +1,7 @@
 # Release Notes
 
 :::tip
-For all versions, please see [GitHub Releases](https://github.com/juicedata/juicefs/releases).
+For all versions, please see [GitHub Releases](https://github.com/leonatone/juicefs/releases).
 :::
 
 ## Version number {#version-number}
