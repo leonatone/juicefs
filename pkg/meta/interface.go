@@ -456,6 +456,8 @@ type Meta interface {
 
 	SetFacl(ctx Context, ino Ino, aclType uint8, n *aclAPI.Rule) syscall.Errno
 	GetFacl(ctx Context, ino Ino, aclType uint8, n *aclAPI.Rule) syscall.Errno
+
+	NewKVMeta(driver, addr string, conf *Config) (Meta, error)
 }
 
 type Creator func(driver, addr string, conf *Config) (Meta, error)
