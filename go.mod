@@ -36,7 +36,7 @@ require (
 	github.com/jcmturner/gokrb5/v8 v8.4.4
 	github.com/json-iterator/go v1.1.12
 	github.com/leonatone/godaemon v0.0.0-20210629045518-3da5144a127d
-	github.com/leonatone/gogfapi v0.0.0-20230625102529-481a99c57958
+	github.com/leonatone/gogfapi v0.0.0-20240409091212-27592bfe4bd8
 	github.com/juju/ratelimit v1.0.2
 	github.com/ks3sdklib/aws-sdk-go v1.2.2
 	github.com/mattn/go-isatty v0.0.18
